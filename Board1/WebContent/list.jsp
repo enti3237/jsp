@@ -1,4 +1,10 @@
+<%@page import="kr.co.board1.bean.BoardMemberBean"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	// 세션에 저장된 데이터를 bmb로 도로 빼낸다 - 다운캐스팅 시켜야함
+	BoardMemberBean bmb = (BoardMemberBean)session.getAttribute("member");
+	
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,7 +17,7 @@
 			<h3>글목록</h3>
 			<!-- 리스트 -->
 			<div class="list">
-				<p class="logout">홍길동님! 반갑습니다. <a href="#">[로그아웃]</a><p>
+				<p class="logout"><%= bmb.getNick() %>님! 반갑습니다. <a href="/Board1/user/logout.jsp">[로그아웃]</a><p>
 				<table>
 					<tr>
 						<td>번호</td>
@@ -38,18 +44,8 @@
 				<a href="#" class="next">다음</a>
 				</span>
 			</nav>
-			<a href="#" class="btnWrite">글쓰기</a>
+			<a href="/Board1/write.jsp" class="btnWrite">글쓰기</a>
 		</div>
 	</body>
 
 </html>
-
-
-
-
-
-
-
-
-
-

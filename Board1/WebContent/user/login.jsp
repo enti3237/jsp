@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	String code = request.getParameter("code");
+%>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -6,10 +10,26 @@
 		<title>로그인</title>
 		<link rel="stylesheet" href="/Board1/css/style.css" />
 	</head>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script>
+	
+			var code = "<%= code %>";
+
+			// 자바스크립트는 .equal를 안 쓰니까 따로 빼기
+
+			if(code == '101'){
+				alert('아이디나 비밀번호가 맞지 않습니다다');
+				uid.focus();
+			}
+
+	</script>
+	
 	<body>
 		<div id="member">
 			<section class="login">		
-				<form action="/Board1/list.jsp" method="get">
+				<form action="/Board1/user/loginProc.jsp" method="post">
 					<table>
 						<tr>
 							<td><img src="/Board1/img/login_ico_id.png" alt="아이디" /></td>
