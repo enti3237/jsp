@@ -16,8 +16,24 @@ public class BoardArticleBean {
 	
 	// table join에 따른 추가
 	private String nick;
+	private String oldName;
+	private int download;
 	
+	public void setOldName(String oldName) {
+		this.oldName = oldName;
+	}
 	
+	public String getOldName() {
+		return oldName;
+	}
+	
+	public void setDownload(int download) {
+		this.download = download;
+	}
+	
+	public int getDownload() {
+		return download;
+	}
 	
 	public int getSeq() {
 		return seq;

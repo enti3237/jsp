@@ -1,3 +1,5 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="kr.co.board1.bean.BoardMemberBean"%>
 <%@page import="kr.co.board1.config.SQL"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -11,11 +13,13 @@
 
 	String seq = request.getParameter("seq");
 	String comment = request.getParameter("comment");
+	String nickName = request.getParameter("nick");
 	String regip = request.getRemoteAddr();
 	
 	// 세션에서 사용자정보 가져오기
 	BoardMemberBean bmb = (BoardMemberBean)session.getAttribute("member");
-	String uid = bmb.getUid();
+	String uid  = bmb.getUid();
+	String nick = bmb.getNick();
 	
 	// 1, 2단계
 	Connection conn = DBConfig.getConnection();
@@ -44,8 +48,15 @@
 	// 글보기페이지로 이동
 	// response.sendRedirect("/Board1/view.jsp?seq="+seq);
 	
+	// 결과값 전송
+	SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+	String rdate = sdf.format(new Date());
+	
 	JSONObject json = new JSONObject();
 	json.put("result", result);
-
+	json.put("nick", nick);
+	json.put("rdate", rdate);
+	json.put("comment", comment);
+	
 	out.print(json);
 %>

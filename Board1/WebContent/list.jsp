@@ -19,33 +19,56 @@
 	}
 	
 	request.setCharacterEncoding("UTF-8");
-	
 	String pg = request.getParameter("pg");
 	
 	if(pg == null){	pg = "1";}
 	// 로그인해서 리스트로 바로 들어왔을 경우 = pg 값이 리퀘스트 되지 않는 경우의 대비
 	
 	// 페이지 관련 함수
-	int total = 0;
-	int lastPage = 0;
-	int currentPg = Integer.parseInt(pg);
+	int total 	   = 0;
+	int lastPage   = 0;
+	int currentPg  = Integer.parseInt(pg);
 	int limitBegin = (currentPg - 1) * 10;
+	int listCount  = 0;
+	int groupCurrent = (int)Math.ceil(currentPg / 10.0); // 1/10=0.0123이 될 값을 올림해서 1로 만들고 그루핑한다
+	int groupStart   = (groupCurrent - 1) * 10 + 1;
+	int groupEnd     = groupStart + 9 ;
 	
+	
+	// 1,2단계
 	Connection conn = DBConfig.getConnection();
 	
+	// 3단계
 	PreparedStatement psmt = conn.prepareStatement(SQL.SELECT_ARTICLE_LIST);
 	psmt.setInt(1, limitBegin);		// 매핑 - LIMIT ?, 10; 의 ? 
 			
 	Statement stmt = conn.createStatement();
 	
+	// 4단계
 	ResultSet rs = psmt.executeQuery();
 	ResultSet rsTotal = stmt.executeQuery(SQL.SELECT_ARTICLE_TOTAL);
 	
+	// 5단계
 	List<BoardArticleBean> articleList = new ArrayList<>();
 	
 	if(rsTotal.next()){
+		
 		total = rsTotal.getInt(1);
-		lastPage = total / 10 + 1;
+		
+		if(total%10 != 0){
+			lastPage = total / 10 + 1;
+		} else {
+			lastPage = total / 10 ;
+		}
+		// 10으로 딱 나누어 떨어질 경우 마지막 페이지가 하나 더 생기는 걸 방지
+		
+		if(groupEnd > lastPage){
+			groupEnd = lastPage;
+		}
+		// groupEnd가 딱 떨어지지 않을 경우
+	
+		
+		listCount = total - limitBegin;
 	}
 	
 	while(rs.next()){
@@ -66,7 +89,8 @@
 		
 		articleList.add(bab);
 	}
-	
+
+	// 6단계
 	rs.close();
 	psmt.close();
 	conn.close();
@@ -96,8 +120,8 @@
 				
 					<% for(BoardArticleBean bab : articleList){ %>
 					<tr>
-						<td><%= bab.getSeq() %></td>
-						<td><a href="/Board1/view.jsp?seq=<%= bab.getSeq() %>"><%= bab.getTitle() %></a>&nbsp;[<%= bab.getComment() %>]</td>
+						<td><%= listCount-- %></td>
+						<td><a href="/Board1/view.jsp?seq=<%= bab.getSeq() %>&pg=<%= pg %>"><%= bab.getTitle() %></a>&nbsp;[<%= bab.getComment() %>]</td>
 						<td><%= bab.getNick() %></td>
 						<td><%= bab.getRdate().substring(2,10) %></td>
 						<td><%= bab.getHit() %></td>
@@ -108,19 +132,24 @@
 			<!-- 페이징 -->
 			<nav class="paging">
 				<span> 
-				<a href="#" class="prev">이전</a>
-				<%
-				for(int p=1 ; p<=lastPage ; p++){ %>
-					
+
+				<!-- groupStart(1, 11, 21...)가 1보다 커야 이전 버튼이 출력된다 -->
+				<% if(groupStart > 1){ %>
+				<a href="/Board1/list.jsp?pg=<%= groupStart - 1 %>" class="prev">이전</a>
+				<% } %>
+
+				<% for(int p=groupStart ; p<=groupEnd ; p++){ %>
 					<a href="/Board1/list.jsp?pg=<%= p %>" class="num <%= (currentPg == p)? "current" : "" %>" ><%= p %></a>
-					
 				<%	}	%>
 
-
-				<a href="#" class="next">다음</a>
+				<!-- groupEnd(10, 20, 30...)가 lastPage보다 작아야 다음 버튼이 출력된다 -->
+				<% if(groupEnd < lastPage){ %>
+				<a href="/Board1/list.jsp?pg=<%= groupEnd + 1 %>" class="next">다음</a>
+				<% } %>
+				
 				</span>
 			</nav>
-			<a href="/Board1/write.jsp" class="btnWrite">글쓰기</a>
+			<a href="/Board1/write.jsp?pg=<%= pg %>" class="btnWrite">글쓰기</a>
 		</div>
 	</body>
 

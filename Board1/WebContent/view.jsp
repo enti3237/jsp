@@ -1,3 +1,4 @@
+<%@page import="kr.co.board1.bean.BoardFileBean"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="kr.co.board1.bean.BoardArticleBean"%>
@@ -10,14 +11,19 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	BoardMemberBean bmb = (BoardMemberBean)session.getAttribute("member");
-
+	
 	// 로그인을 안했으면 로그인 페이지로 이동
 	if(bmb == null){
 		response.sendRedirect("/Board1/user/login.jsp");
 		return;		// 여기서 프로그램 실행을 멈춘다 (안 쓰면 response 명령이 제일 나중에 실행되어 에러남)
 	}
 
+	request.setCharacterEncoding("UTF-8");
 	String seq = request.getParameter("seq");
+	String pg  = request.getParameter("pg");
+	String nick = request.getParameter("nick");
+	
+	// list.jsp에서 페이지 값을 받아와서 다시 list로 나갈 때 그 자리로 돌아가기
 	
 	// 1, 2단계
 	Connection conn = DBConfig.getConnection();
@@ -58,6 +64,8 @@
 		bab.setUid(rs.getString(9));
 		bab.setRegip(rs.getString(10));
 		bab.setRdate(rs.getString(11));
+		bab.setOldName(rs.getString(14));
+		bab.setDownload(rs.getInt(16));
 	}
 	
 	List<BoardArticleBean> commentList = new ArrayList<>();
@@ -79,6 +87,7 @@
 		
 		commentList.add(comment);
 	}
+
 	
 	// 6단계
 	rs.close();
@@ -116,8 +125,8 @@
 						<tr>
 							<td>첨부파일</td>
 							<td>
-								<a href="#">테스트.hwp</a>
-								<span>3회 다운로드</span>
+								<a href="#"><%= bab.getOldName() %></a>
+								<span><%= bab.getDownload() %>회 다운로드</span>
 							</td>
 						</tr>
 						<% } %>
@@ -132,7 +141,7 @@
 					<div class="btns">
 						<a href="/Board1/proc/deleteProc.jsp?seq=<%= seq %>" class="cancel del">삭제</a>
 						<a href="/Board1/modify.jsp?seq=<%= seq %>" class="cancel mod">수정</a>
-						<a href="/Board1/list.jsp" class="cancel">목록</a>
+						<a href="/Board1/list.jsp?pg=<%= pg %>" class="cancel">목록</a>
 					</div>
 				</form>
 			</div>
@@ -145,7 +154,7 @@
 				<% for(BoardArticleBean comment : commentList){ %>
 				<div class="comment">
 					<span>
-						<span><%= comment.getUid() %></span>
+						<span><%= nick %></span>
 						<span><%= comment.getRdate().substring(2, 10) %></span>
 					</span>
 					<textarea><%= comment.getContent() %></textarea>
@@ -168,8 +177,8 @@
 			<section class="comment_write">
 				<h3>댓글쓰기</h3>
 				<div>
-					<form action="/Board1/proc/commentProc.jsp" method="post">
-						<input type="hidden" name="seq" value="<%= bab.getSeq() %>">
+					<form action="/Board1/proc/commentProc.jsp?nick=<%= nick %>" method="post">
+						<input type="hidden" name="seq" value="<%= bab.getSeq() %>" />
 						<textarea name="comment" rows="5"></textarea>
 						<div class="btns">
 							<a href="#" class="cancel">취소</a>
@@ -178,45 +187,67 @@
 					</form>
 				</div>
 			</section>
-		<script>
-			$(document).ready(function(){
+
+	<script>
+		$(document).ready(function() {
+			
+			$('.comment_write input[type=submit]').click(function(e) {
+				e.preventDefault();
 				
-				$('.comment_write input[type=submit]').click(funtion(e){
-					e.preventDefault();			// 클릭했을 때 submit의 액션(=페이지 이동)을 차단한다
-					
-					// 태그객체생성
-					var comments = $('section.comments');
-					
-					// 전송할 데이터 수집
-					var input    = $('.comment_write input[name=seq]');
-					var textarea = $('.comment_write textarea]');
-					
-					var seq     = input.val();
-					var comment = textarea.val();
-					
-					// 데이터 유효성 검사 (null 아님)
-					if(comment == ''){
-						alert('댓글을 입력하십시오.');
-						return; 
-					}
-					
-					var json = {"seq":seq, "comment":comment};
-					
-					$.ajax({
-						url : '/Board1/proc/commentProc.jsp',
-						type : 'post',
-						data : json, 
-						dataType : 'json',
-						success : function(data){
-							textarea.val('');
+				var html = "<div class='comment'>" 
+								+ "<span>"
+									+ "<span class='nick'></span>"
+									+ "<span class='rdate'></span>"
+								+ "</span>"
+								+ "<textarea></textarea>"
+								+ "<div>"
+									+ "<a href='#' class='del'>삭제</a>"
+									+ "<a href='#' class='mod'>수정</a>"
+								+ "</div>"
+							+ "</div>";
 							
+				var dom = $($.parseHTML(html));
+				
+				var comments = $('section.comments');
+				
+
+				var input    = $('.comment_write input[name=seq]');
+				var textarea = $('.comment_write textarea');
+				
+				var seq     = input.val();
+				var comment = textarea.val();
+				if(comment == ''){
+					alert('댓글을 입력하십시오.');
+					return;
+				}
+				
+				var json = {"seq":seq, "comment":comment};
+				
+				$.ajax({
+					
+					url: '/Board1/proc/commentProc.jsp',
+					type: 'post',
+					data: json,
+					dataType: 'json',
+					success: function (data) {
+						textarea.val('');
+						
+						dom.find('.nick').text(data.nick);
+						dom.find('.rdate').text(data.rdate);
+						dom.find('textarea').text(data.comment);
+						
+						comments.append(dom);
+						
+						if($('.empty').is(':visible')){
+							$('.empty').remove();
 						}
-					});
+					}
 				});
 			});
-		
-		</script>
-		
+		});
+	
+	
+	</script>
 	</div>
 	<!-- board 끝 -->
 	

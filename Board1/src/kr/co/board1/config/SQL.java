@@ -36,7 +36,12 @@ public class SQL {
 													+ "WHERE a.parent = 0 "
 													+ "ORDER BY seq DESC "
 													+ "LIMIT ?, 10;";			// LIMIT 0, 10이 1페이지
-	public static final String SELECT_ARTICLE_VIEW = "SELECT * FROM `BOARD_ARTICLE` WHERE `seq` = ?";
+	
+	public static final String SELECT_ARTICLE_VIEW = "SELECT * FROM `BOARD_ARTICLE` AS a "
+													+ "LEFT JOIN `BOARD_FILE` AS b "
+													+ "ON a.seq = b.parent "
+													+ "WHERE a.seq = ?;";
+	
 	public static final String UPDATE_ARTICLE_HIT = "UPDATE `BOARD_ARTICLE` SET `hit`=`hit`+1 WHERE `seq`=?";
 	
 	public static final String INSERT_ARTICLE  = "INSERT INTO `BOARD_ARTICLE` SET "
@@ -49,20 +54,27 @@ public class SQL {
 											+ "`regip`=?, "
 											+ "`rdate`=NOW();";
 	
+	public static final String SELECT_MAX_SEQ = "SELECT MAX(seq) FROM `BOARD_ARTICLE`";
+	public static final String INSERT_FILE = "INSERT INTO `BOARD_FILE` SET "
+											+ "`parent`  =?, "
+											+ "`oldName` =?, "
+											+ "`newName` =?, "
+											+ "`rdate` = NOW()";
+	
 	public static final String UPDATE_COMMENT_COUNT = "UPDATE `BOARD_ARTICLE` SET `comment` = `comment`+1 WHERE `seq`=?";
 	public static final String SELECT_COMMENT_LIST = "SELECT * FROM `BOARD_ARTICLE` WHERE parent=?";
 	public static final String INSERT_COMMENT = "INSERT INTO `BOARD_ARTICLE` SET "
-			+ "`parent`=?, "
-			+ "`content`=?, "
-			+ "`uid`=?, "
-			+ "`regip`=?, "
-			+ "`rdate`=NOW();";
+											+ "`parent`=?, "
+											+ "`content`=?, "
+											+ "`uid`=?, "
+											+ "`regip`=?, "
+											+ "`rdate`=NOW();";
 	
 	public static final String UPDATE_MODIFY_ARTICLE = "UPDATE `BOARD_ARTICLE` SET "
-			+ "`title` =?, "
-			+ "`content` =? "
-			+ "WHERE `seq` =?";
-	
+											+ "`title` =?, "
+											+ "`content` =? "
+											+ "WHERE `seq` =?";
+
 	public static final String DELETE_ARTICLE = "DELETE FROM `BOARD_ARTICLE` WHERE `seq`=?";
 
 }
