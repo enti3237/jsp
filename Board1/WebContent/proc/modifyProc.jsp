@@ -9,6 +9,7 @@
 	String seq = request.getParameter("seq");
 	String title = request.getParameter("subject");
 	String content = request.getParameter("content");
+	String pg = request.getParameter("pg");
 	
 	Connection conn = DBConfig.getConnection();
 	
@@ -22,6 +23,6 @@
 	psmt.close();
 	conn.close();
 	
-	response.sendRedirect("/Board1/view.jsp?seq="+seq);
+	response.sendRedirect("/Board1/view.jsp?seq="+seq+"&pg="+pg);
 
 %>

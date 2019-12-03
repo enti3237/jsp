@@ -1,4 +1,3 @@
-<%@page import="kr.co.board1.bean.BoardFileBean"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="kr.co.board1.bean.BoardArticleBean"%>
@@ -10,6 +9,7 @@
 <%@page import="kr.co.board1.bean.BoardMemberBean"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("UTF-8");
 	BoardMemberBean bmb = (BoardMemberBean)session.getAttribute("member");
 	
 	// 로그인을 안했으면 로그인 페이지로 이동
@@ -22,6 +22,7 @@
 	String seq = request.getParameter("seq");
 	String pg  = request.getParameter("pg");
 	String nick = request.getParameter("nick");
+	String parent = request.getParameter("parent");
 	
 	// list.jsp에서 페이지 값을 받아와서 다시 list로 나갈 때 그 자리로 돌아가기
 	
@@ -125,7 +126,7 @@
 						<tr>
 							<td>첨부파일</td>
 							<td>
-								<a href="#"><%= bab.getOldName() %></a>
+								<a href="/Board1/proc/download.jsp?parent=<%= bab.getSeq() %>"><%= bab.getOldName() %></a>
 								<span><%= bab.getDownload() %>회 다운로드</span>
 							</td>
 						</tr>
@@ -139,8 +140,10 @@
 						</tr>
 					</table>
 					<div class="btns">
+						<% if(bab.getUid().equals(bmb.getUid())){ %>
 						<a href="/Board1/proc/deleteProc.jsp?seq=<%= seq %>" class="cancel del">삭제</a>
-						<a href="/Board1/modify.jsp?seq=<%= seq %>" class="cancel mod">수정</a>
+						<a href="/Board1/modify.jsp?seq=<%= seq %>&pg=<%= pg %>" class="cancel mod">수정</a>
+						<% } %>
 						<a href="/Board1/list.jsp?pg=<%= pg %>" class="cancel">목록</a>
 					</div>
 				</form>

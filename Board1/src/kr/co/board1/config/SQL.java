@@ -55,11 +55,15 @@ public class SQL {
 											+ "`rdate`=NOW();";
 	
 	public static final String SELECT_MAX_SEQ = "SELECT MAX(seq) FROM `BOARD_ARTICLE`";
+	
+	public static final String SELECT_FILE = "SELECT * FROM `BOARD_FILE` WHERE `parent`=?;";
+	public static final String UPDATE_FILE_COUNT = "UPDATE `BOARD_FILE` SET `download`=`download`+1 WHERE `parent`=?;";
 	public static final String INSERT_FILE = "INSERT INTO `BOARD_FILE` SET "
 											+ "`parent`  =?, "
 											+ "`oldName` =?, "
 											+ "`newName` =?, "
 											+ "`rdate` = NOW()";
+	public static final String DELETE_FILE = "DELETE FROM `BOARD_FILE` WHERE `parent`=?";
 	
 	public static final String UPDATE_COMMENT_COUNT = "UPDATE `BOARD_ARTICLE` SET `comment` = `comment`+1 WHERE `seq`=?";
 	public static final String SELECT_COMMENT_LIST = "SELECT * FROM `BOARD_ARTICLE` WHERE parent=?";

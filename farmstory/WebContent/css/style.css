@@ -1,0 +1,406 @@
+/* CSS 만들 땐 스타일 태그 내용물 싹 가져와서 덮으면 됨 ㅇㅅㅇ 태그 자체는 빼고
+css 링크 연결은 스타일 태그 밖에서 해야함 절대주소는 안 먹힘 */
+
+/* 기존 태그 초기화 (필수작업)
+- 폰트의 경우 all 선택인 *로 지정할 수도 있지만 body 지정이 좀 더 유연한 편 */
+*       {margin: 0;
+        padding: 0;}
+body    {font: normal 12px "굴림";}
+ul, ol  {list-style: none;}
+a       {text-decoration: none; color:#111;}
+
+/* 고정배너 만들기 - 위치를 퍼센티지로 두고 마진을 잡는다 */
+/* 오른쪽 고정배너 */
+#banner {
+    position: fixed;
+    left: 50%;
+    top: 150px;
+    margin-left: 500px;
+    width: 60px;
+    height: 110px;
+    z-index: 100000;
+    border: 1px solid red; 
+}
+
+/* bx슬라이더 가장자리 효과 지우기 */
+.bx-wrapper {
+   -moz-box-shadow: none;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+   border: 0;
+ }
+ 
+/* wrapper */
+#wrapper {
+   width: 980px;
+   height: auto;
+   margin: 0 auto;
+}
+
+/* 헤더 */
+header {
+   position: relative;
+   width: 100%;
+   height: 142px;
+   background: url('../img/head_top_line.png') no-repeat;
+}
+header > .logo {
+   /* margin: 0 auto; 블럭용 명령이라 안 먹힘 */ 
+   position: absolute;
+   top: 20px;
+   left: 50%;
+   margin-left: -95px;
+}
+header > p {
+   float: right ;
+   margin-top: 16px;
+}
+header > p > a {
+   margin-right: 4px;
+}
+header > img {
+   position: absolute;
+   right: 4px;
+   top: 56px;
+}
+header > .gnb {
+   position: absolute;
+   width: 100%;
+   height: 50px;
+   left: 0px;
+   bottom: 0px;
+}
+header > .gnb > li {
+   float: left;
+   width: 20%;
+   height: 50px;
+   border-left: 1px solid transparent;
+   border-right: 1px solid white;
+   box-sizing: border-box;        
+}
+header > .gnb > li img {
+   margin-left: 100px;
+   margin-top: -16px;
+}
+/* 이 배너가 li 밖으로 튀어나오게 하기 위해선 overflow:hidden을 삭제하고 li의 세로값을 고정으로 줘야한다 */
+
+header > .gnb > li > a {
+   display: block;
+   width: 100%;
+   height: 100%;
+   border-top: 3px solid #3f3f3f;
+   font-size: 0px;
+   background-repeat: no-repeat;
+   background-position: center 6px;
+   box-sizing: border-box;
+}
+
+header > .gnb > li:nth-child(1) > a {background-image: url('../img/head_menu1.png');}
+header > .gnb > li:nth-child(2) > a {background-image: url('../img/head_menu2.png');}
+header > .gnb > li:nth-child(3) > a {background-image: url('../img/head_menu3.png');}
+header > .gnb > li:nth-child(4) > a {background-image: url('../img/head_menu4.png');}
+header > .gnb > li:nth-child(5) > a {background-image: url('../img/head_menu5.png');}
+
+header > .gnb > li:nth-child(1) > a:hover {background-image: url('../img/head_menu1_ov.png');}
+header > .gnb > li:nth-child(2) > a:hover {background-image: url('../img/head_menu2_ov.png');}
+header > .gnb > li:nth-child(3) > a:hover {background-image: url('../img/head_menu3_ov.png');}
+header > .gnb > li:nth-child(4) > a:hover {background-image: url('../img/head_menu4_ov.png');}
+header > .gnb > li:nth-child(5) > a:hover {background-image: url('../img/head_menu5_ov.png');}
+
+/* 메인 */
+main{
+   width: 100%;
+   height: auto;
+}
+main > div {
+   width: 100%;
+   margin-top: 10px;
+}
+main > div.slider {
+   position: relative;
+   height: 312px;
+}
+main > .slider > .slogan {
+   position: absolute;
+   left: 30px;
+   top: 30px;
+   z-index: 100;
+}
+/* 높이를 주는 방법 z-index */
+main > .slider > ul {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+/* float가 아니라 position! */
+main > .slider > ul > li {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+}
+main > .slider > ul > li:nth-child(1) {left: 0px; top: 0px;}
+main > .slider > ul > li:nth-child(2) {left: 100%; top: 0px;}
+main > .slider > ul > li:nth-child(3) {left: 200%; top: 0px;}
+
+main > .slider > .banner {
+   position: absolute;
+   width: 230px;
+   height: 100%;
+   right: 0px;
+   top: 0px;
+   background: url('../img/main_banner_bg.jpg') no-repeat;
+   z-index:100; /*밑에 있어서 안 올려도 되긴 함*/
+}
+main > .slider > .banner > img {position: absolute;}
+main > .slider > .banner > img:nth-child(1) {top:5px; right:5px;}
+main > .slider > .banner > img:nth-child(2) {top: 25px; left: 10px;}
+main > .slider > .banner > img:nth-child(3) {bottom: 10px; left: 10px;}
+
+/* 퀵슬라이더 */
+main > div.quick {
+   height: 74px;
+   overflow: hidden;
+   /* 고정높이를 갖고있어서 float-overflow를 할 필요가 없긴 한데 하면 좋다 */
+}
+main > .quick > a {
+   float: left;
+   display: block;
+   width: 50%;
+   height: 100%;
+   background-repeat: no-repeat;
+   padding: 10px;
+   box-sizing: border-box;;
+   /* 패딩값을 주면 박스사이즈 값도 꼭 같이 줘야함 */
+}
+main > .quick > a:nth-child(1) {background-image: url('../img/main_banner_sub1_bg.jpg');}
+main > .quick > a:nth-child(2) {background-image: url('../img/main_banner_sub2_bg.jpg');}
+
+main > div.latest {
+   height: 186px;
+   overflow: hidden;
+   /* 고정높이를 갖고있어서 float-overflow를 할 필요가 없긴 한데 하면 좋다 */
+}
+main > .latest > article {
+   float: left;
+   position: relative;
+   width: 33.333%;
+   height: 100%;
+   }
+main > .latest > article > * {position: absolute;}
+main > .latest > article > img:nth-child(1) {left:0px; top:12px;}
+main > .latest > article > img:nth-child(2) {left:0px; bottom:25px;}
+main > .latest > article > table {right:16px; bottom:22px; color:#6a6a6a;}
+main > .latest > article > table tr > td:nth-child(2) {
+   display: block;
+   width: 132px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   line-height: 18px;
+   }
+   /* 저 132px는 날짜칸이 어느정도 확보된 것을 전제한다 */
+   /* 어차피 최신글보기로 불러와야하지만... */
+
+/* 인포 */
+main > div.info {
+   height: 144px;
+   overflow: hidden;
+   border-top: 2px solid #756c65;
+   padding-top: 12px;
+   padding-bottom: 12px;
+   box-sizing: border-box;
+   /* article에 border-top을 붙이면 줄이 3개가 되니까 div에 붙인다 */
+}
+
+main > .info > article {
+   float: left;
+   height: 100%;
+   color:#666;
+   font-size: 11px;
+   line-height: 16px;
+   font-family: "돋움";
+   }
+   
+main > .info > article:nth-child(1) {width: 39%;}
+
+main > .info > article:nth-child(1) > img {margin-top: 0px;}
+main > .info > article:nth-child(1) > div {
+   width: 100%;
+   margin-top: 13px;}
+main > .info > article:nth-child(1) > div > img:nth-child(1) {
+   float: left;
+   margin-right: 15px;}
+main > .info > article:nth-child(1) > div > img:nth-child(2) {
+   float: left;
+   margin-right: 15px;}
+
+main > .info > article:nth-child(2) {
+   width: 23%; 
+   border-left :1px solid #d7d7d7; 
+   border-right:1px solid #d7d7d7;
+   padding-left: 23px;
+   box-sizing: border-box;
+   }
+main > .info > article:nth-child(2) > img {
+   margin-bottom: 13px;
+   box-sizing: border-box;}
+
+main > .info > article:nth-child(3) {width: 38%;}
+
+
+/* 푸터 */
+footer {
+   width: 100%;
+   height: 118px;
+   margin-top: 10px;
+   border-top: 1px solid #c5bd9f;
+   box-sizing: border-box;
+}
+
+footer > p {
+   float: right ;
+   margin-top: 20px;
+   margin-right: 10px;
+   font-size: 11px;
+   color: #585858; 
+   line-height: 17px;
+}
+
+/* 서브공통 */
+.sub {
+    width: 100%;
+    height: auto;
+}
+.sub > div {
+    width: 100%;
+}
+.sub > div:nth-child(1){
+    position: relative;
+    width: 100%;
+    height: 184px;
+    background: url('../img/sub_top_bg.jpg') no-repeat;
+} 
+.sub > div:nth-child(1) > img {
+    position: absolute;
+    left:10px; bottom: 10px;
+}
+
+.sub > div:nth-child(2) {
+    width: 100%;
+    overflow: hidden;
+    /* float를 썼으면 꼭 overflow도 쓸 것 */
+}
+.sub .lnb {
+    float: left;
+    width: 18%;
+    min-height: 650px;
+    background: url('../img/sub_aside_bg_line.png') no-repeat;
+    background-position: right top; 
+}
+.sub .lnb > img {
+    margin-top: 16px; 
+    margin-left: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.sub .lnb > ul {
+    width: 175px;
+    height: 233px;
+    padding-top: 30px;
+    background: url('../img/sub_aside_bg_lnb.png') no-repeat;
+}
+.sub .lnb > ul > li {
+    width: 100%;
+    height: 29px;
+    margin-bottom: 6px;
+}
+.sub .lnb a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+}
+
+/* 서브메뉴 - 팜스토리 소개 */
+.sub.cate1 .lnb > ul > li:nth-child(1) > a {background: url('../img/sub_cate1_lnb1.png');}
+.sub.cate1 .lnb > ul > li:nth-child(2) > a {background: url('../img/sub_cate1_lnb2.png');}
+.sub.cate1 .lnb > ul > li:nth-child(1) > a:hover {background: url('../img/sub_cate1_lnb1_ov.png');}
+.sub.cate1 .lnb > ul > li:nth-child(2) > a:hover {background: url('../img/sub_cate1_lnb2_ov.png');}
+.sub.cate1 .lnb > ul > li:nth-child(1).on > a {background: url('../img/sub_cate1_lnb1_ov.png');}
+.sub.cate1 .lnb > ul > li:nth-child(2).on > a {background: url('../img/sub_cate1_lnb2_ov.png');}
+
+/* 서브메뉴 - 장보기 */
+.sub.cate2 .lnb > ul > li:nth-child(1) > a {background: url('../img/sub_cate2_lnb1.png');}
+.sub.cate2 .lnb > ul > li:nth-child(1) > a:hover {background: url('../img/sub_cate2_lnb1_ov.png');}
+.sub.cate2 .lnb > ul > li:nth-child(1).on > a {background: url('../img/sub_cate2_lnb1_ov.png');}
+
+/* 서브메뉴 - 농작물이야기 */
+.sub.cate3 .lnb > ul > li:nth-child(1) > a {background: url('../img/sub_cate3_lnb1.png');}
+.sub.cate3 .lnb > ul > li:nth-child(1) > a:hover {background: url('../img/sub_cate3_lnb1_ov.png');}
+.sub.cate3 .lnb > ul > li:nth-child(1).on > a {background: url('../img/sub_cate3_lnb1_ov.png');}
+.sub.cate3 .lnb > ul > li:nth-child(2) > a {background: url('../img/sub_cate3_lnb2.png');}
+.sub.cate3 .lnb > ul > li:nth-child(2) > a:hover {background: url('../img/sub_cate3_lnb2_ov.png');}
+.sub.cate3 .lnb > ul > li:nth-child(2).on > a {background: url('../img/sub_cate3_lnb2_ov.png');}
+.sub.cate3 .lnb > ul > li:nth-child(3) > a {background: url('../img/sub_cate3_lnb3.png');}
+.sub.cate3 .lnb > ul > li:nth-child(3) > a:hover {background: url('../img/sub_cate3_lnb3_ov.png');}
+.sub.cate3 .lnb > ul > li:nth-child(3).on > a {background: url('../img/sub_cate3_lnb3_ov.png');}
+
+/* 서브메뉴 - 이벤트 */
+.sub.cate4 .lnb > ul > li:nth-child(1) > a {background: url('../img/sub_cate4_lnb1.png');}
+.sub.cate4 .lnb > ul > li:nth-child(1) > a:hover {background: url('../img/sub_cate4_lnb1_ov.png');}
+.sub.cate4 .lnb > ul > li:nth-child(1).on > a {background: url('../img/sub_cate4_lnb1_ov.png');}
+
+/* 서브메뉴 - 커뮤니티 */
+.sub.cate5 .lnb > ul > li:nth-child(1) > a {background: url('../img/sub_cate5_lnb1.png');}
+.sub.cate5 .lnb > ul > li:nth-child(1) > a:hover {background: url('../img/sub_cate5_lnb1_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(1).on > a {background: url('../img/sub_cate5_lnb1_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(2) > a {background: url('../img/sub_cate5_lnb2.png');}
+.sub.cate5 .lnb > ul > li:nth-child(2) > a:hover {background: url('../img/sub_cate5_lnb2_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(2).on > a {background: url('../img/sub_cate5_lnb2_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(3) > a {background: url('../img/sub_cate5_lnb3.png');}
+.sub.cate5 .lnb > ul > li:nth-child(3) > a:hover {background: url('../img/sub_cate5_lnb3_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(3).on > a {background: url('../img/sub_cate5_lnb3_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(4) > a {background: url('../img/sub_cate5_lnb4.png');}
+.sub.cate5 .lnb > ul > li:nth-child(4) > a:hover {background: url('../img/sub_cate5_lnb4_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(4).on > a {background: url('../img/sub_cate5_lnb4_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(5) > a {background: url('../img/sub_cate5_lnb5.png');}
+.sub.cate5 .lnb > ul > li:nth-child(5) > a:hover {background: url('../img/sub_cate5_lnb5_ov.png');}
+.sub.cate5 .lnb > ul > li:nth-child(5).on > a {background: url('../img/sub_cate5_lnb5_ov.png');}
+
+.sub > div:nth-child(2) > article {
+    float: left;
+    width: 82%;
+    min-height: 650px;
+    padding-left: 42px;
+    box-sizing: border-box;
+}
+
+.sub .content > nav {
+    position: relative;
+    width: 100%;
+    height: 72px;
+    border-bottom: 1px solid #c2c2c2;
+    margin-bottom: 36px;
+    box-sizing: border-box;
+}
+.sub .content > nav > img {
+    position: absolute;
+    left: 0; bottom: 5px;}
+.sub .content > nav > p {
+    position: absolute;
+    right: 0; bottom: 5px; 
+    color: #8c8c8c; 
+    font-size:11px;
+}
+.sub .content > nav > p::before {
+    background-image: url('../img/sub_page_nav_ico.gif');
+    content: "";
+    display: inline-block;
+    height: 5px;
+    width: 5px;
+    margin-bottom: 1px;
+    margin-right: 5px;
+}
+.sub .content > nav > p > span {color:#91ba15; font-weight: bold;}
