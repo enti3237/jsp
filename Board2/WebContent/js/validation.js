@@ -10,29 +10,31 @@ $(document).ready(function() {
 	$('#regForm').submit(function(){
 		
 		// $('input[name=pass1]');는 패스워드 입력창의 태그일 뿐으로 .val이 붙어야 값을 지칭하게 됨
-		var uid   = $('input[name=uid]');
-		var name  = $('input[name=name]');
 		var pass1 = $('input[name=pass1]');
-		var pass2 = $('input[name=pass2]');	
+		var pass2 = $('input[name=pass2]');
+		var uid   = $('input[name=uid]');
+		var name  = $('input[name=name]');	
 		
+		// 아이디가 최소 5자리 이상 한글, 특문 사용 불가
 		// 정규표현식 regId 가 사용자가 입력한 id가 맞지(.text) 않으면(!)
-		// 아이디가 최소 4자이상 한글, 특수문자 포함여부
-		if(regId.test(uid.val()) == false){
-			alert('아이디는 영어 소문자, 숫자로 최소 4자 이상이어야 합니다.');
+		if(!regId.test(uid.val())) {
+			alert('아이디는 영어소문자와 숫자만 사용하실 수 있으며 최소 4자 이상이어야 합니다');
 			uid.val('').focus();
 			return false;
 		}
 		
 		// 비밀번호 일치 확인 (.equals 안 쓴다) 
-		if(pass1.val() != pass2.val()){
-			alert('비밀번호가 일치하지 않습니다.');						
-			pass1.val('').focus();
+		if(pass1.val() != pass2.val()) {
+			alert('비밀번호가 일치하지 않습니다.');
+			// 커서를 비번 위치에 둔다
+			pass1.val('');
 			pass2.val('');
+			pass1.focus();
 			return false;
 		}
 
 		// 이름 한글 여부
-		if(regName.test(name.val()) == false){
+		if(!regName.test(name.val())) {
 			alert('이름은 한글로 최소 2자에서 5자까지 입력하세요.');
 			name.val('').focus();
 			return false;
@@ -40,5 +42,7 @@ $(document).ready(function() {
 		
 		return true;
 		
-	});	
+	});
+	
+	
 });

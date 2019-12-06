@@ -14,17 +14,21 @@ $(function(){
 		}
 		
 		$.ajax({
-			url: '/Board1/user/checkDuplicateProc.jsp?type='+type+'&value='+value,
+			url: '/Board2/user/checkUid.do?uid='+uid,
 			type: 'get',
 			dataType: 'json',
 			success: function( data ){							
-				if(data.result == 1){								
-					tag.next().css('color', 'red').text('이미 사용중인 '+type+' 입니다.');
+				if(data.rs == 1){								
+					tag.next().css('color', 'red').text('이미 사용중인 '+uid+' 입니다.');
 					tag.focus();
 				}else{								
-					tag.next().css('color', 'green').text('사용 가능한 '+type+' 입니다.');								
+					tag.next().css('color', 'green').text('사용 가능한 '+uid+' 입니다.');								
 				}							
 			}
 		});
 	});	
+	
+	
+	
+	
 });
