@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+ul, ol { list-style: none; }
+a { text-decoration: none; color: #555; }
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1;
+    color: #555;            
+}
+
+#wrapper {
+    width: 100%;
+    height: auto;
+    min-width: 980px;
+}      
+
+#top-banner {
+    width: 100%;
+    height: 80px;    
+    text-align: center;
+}
+
+#top-banner > canvas {
+    display: none;
+}
+#top-banner > div {
+    position: relative;
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;
+}
+#top-banner > div > .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/* 헤더 */
+header {
+    width: 100%;
+    height: auto;            
+}
+
+header > div > article {
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+header > .service {
+    width: 100%;
+    height: 30px;
+    background: #efebdb;            
+}
+
+
+header > .service p:nth-child(1) {
+    float: left;
+    font-weight: 600;            
+    margin-top: 6px;
+}
+header > .service p:nth-child(2) {
+    float: right;            
+}
+
+header > .service p:nth-child(2) > a {
+    color: #6f6247;
+    margin-left: 16px;
+    line-height: 32px;
+}
+header > .service p:nth-child(2) > a:hover {
+    border-bottom: 1px solid #9d9580;
+}
+
+
+header > .service p:nth-child(1) > a {
+    margin-right: 16px;            
+}
+header > .service p:nth-child(1) > a::before {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    content: "";
+    margin-right: 6px;
+    margin-bottom: -4px;
+    background-image: url('../img/ico_service.png');            
+}
+header > .service p:nth-child(1) > a:nth-child(1)::before {background-position-x: 0px;}
+header > .service p:nth-child(1) > a:nth-child(2)::before {background-position-x: -16px;}
+header > .service p:nth-child(1) > a:nth-child(3)::before {background-position-x: -32px; width: 20px;}
+
+header > .logo {
+    width: 100%;
+    height: 80px;            
+}
+header > .logo > article {
+    position: relative;
+}
+
+header > .logo > article > a {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -283px;
+}
+
+header > .gnb {
+    width: 100%;
+    height: 72px;
+    border-top: 2px solid #cdc197;
+    border-bottom: 1px solid #e9e4d2;
+    box-sizing: border-box;
+}
+
+header > .gnb ul {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin-top: 26px;               
+}
+header > .gnb ul > li {
+    float: left;
+    width: 16.66%;
+    height: 16px;
+    border-right: 1px solid #dedede;
+    box-sizing: border-box;
+}
+header > .gnb ul > li:last-child {border: none;}
+header > .gnb ul > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: #555;
+    text-align: center;            
+}
+header > .gnb ul > li.on > a {
+    padding-bottom: 13px;
+    background-image: url('../img/header_gnb_bullet.gif');
+    background-repeat: no-repeat;
+    background-position: center 24px;
+    font-weight: bold;
+}
+
+/* 메인 */
+main {
+    width: 100%;
+    height: auto;            
+}
+
+main > div {
+    width: 100%;
+}
+
+main > div > article {
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+main > .slider {            
+    height: 645px;
+    margin-top: 10px;            
+}
+
+main > .slider > div {
+    width: 1450px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+main > .slider > div > ul {
+    float: left;
+    width: 1115px;
+    height: 100%;
+}
+main > .slider > div > ul > li {
+    width: 100%;
+    height: 100%;
+}
+
+main > .slider .box-office {
+    position: relative;
+    float: right;
+    width: 315px;
+    height: 100%;
+}
+main > .slider .box-office > .top {
+    width: 100%;
+    height: 153px;
+    text-align: center;
+    background: #2a2e33;
+}
+
+main > .slider .box-office > .top > img { 
+    margin-top: 50px;
+}
+
+main > .slider .box-office > .top > .tab {
+    display: block;
+    margin-top: 20px;
+}
+
+main > .slider .box-office > .top > .tab > a {
+    display: inline-block;
+    font-size: 14px;
+    padding-bottom: 3px;
+    color: #fff;            
+}
+
+main > .slider .box-office > .top > .tab > a.on {
+    border-bottom: 1px solid #7f8285;
+}
+
+main > .slider .box-office > .top > .tab > span {
+    color: #505862;
+    margin: 0 16px;
+}
+
+main > .slider .box-office > ul {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+main > .slider .box-office > ul > li {
+    height: 54px;
+    padding: 11px 10px 0;
+    box-sizing: border-box;            
+}
+
+main > .slider .box-office > ul > li > span {
+    float: right;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    color: #666;
+    font-size: 13px;
+}
+main > .slider .box-office > ul > li > span > em {
+    padding-left: 3px;
+}
+
+main > .slider .box-office > ul a {
+    color: #1a1917;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+main > .slider .box-office > ul .rank {
+    line-height: 30px;
+    padding-right: 5px;
+    font-family: 'linlivertine';
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+main > .slider .box-office > ul .grade {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: -4px;            
+    font-size: 0;
+    background-image: url('../img/sprite_bg_grade.png');
+    overflow: hidden;            
+}
+
+main > .slider .box-office > ul .gradeAll { background-position: 0 0;}
+main > .slider .box-office > ul .grade12  {background-position: -21px 0;}
+main > .slider .box-office > ul .grade15  {background-position: -42px 0;}
+main > .slider .box-office > ul .grade18  {background-position: -63px 0;}
+main > .slider .box-office > ul .grade19  {background-position: -84px 0;}
+
+
+main > .slider .box-office > ul .tit {
+    display: inline-block;
+    width: 150px;
+    height: 17px;
+    line-height: 13px;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+main > .slider .box-office > a {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    background: #ee1c25;
+    color: #fff;
+    height: 64px;
+    line-height: 64px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+main > .poster {
+    height: 274px;
+    margin: 70px 0;
+}
+
+main > .poster ul {
+    overflow: hidden;
+}
+
+main > .poster ul > li {
+    float: left;
+    margin-left: 10px;
+}
+main > .poster ul > li:first-child {margin: 0;}
+
+main > .sponsor {
+    height: 88px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e3e1d6;
+    box-sizing: border-box;
+}
+main > .sponsor ul {
+    overflow: hidden;
+    margin-top: 22px;
+}
+main > .sponsor ul > li {
+    float: left;
+    margin-left: 48.5px;    
+}
+main > .sponsor ul > li:first-child { margin: 0;}
+
+
+main > .event {
+    height: 865px;
+    background: url('../img/bg_pattern.png');
+}
+
+main > .event h1 {
+    padding: 40px 0;
+    color: #231f20;
+    font-family: 'linlivertine';
+    font-style: italic;
+    font-size: 40px;                
+    text-align: center;
+    font-weight: normal;
+}
+
+main > .event div > a {
+    float: right;
+}
+
+main > .event div > a:nth-child(4) {margin-top: -40px;}
+main > .event div > a:nth-child(5) {margin-top: -100px;}
+
+main > .quick {
+    height: 260px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #dedede;
+}
+
+main > .quick > article {
+    padding-top: 50px;
+    box-sizing: border-box;
+    text-align: center;    
+}
+
+main > .quick ul > li {
+    float: left;
+    margin: 0 4px;
+}
+
+
+
+main > .notice {
+    height: 60px;
+}
+
+main > .notice > article {
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+main > .notice h2 {
+    float: left;
+}
+
+main > .notice .more {
+    float: right;
+    display: inline-block;
+    height: 13px;
+    margin-top: 3px;
+    margin-right: 40px;
+    padding-right: 18px;
+    background: url('../img/btn_more.png') no-repeat 100% 0;
+    font-size: 11px;
+    color: #666;
+    line-height: 13px;
+}
+
+main > .notice ul {
+    float: left;         
+    width: 740px;
+    height: 20px;
+    margin-left: 42px;
+    line-height: 20px;            
+    overflow: hidden;
+}
+
+main > .notice ul > li > a {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+
+
+/* 푸터 */
+footer {
+    width: 100%;
+    height: auto;    
+}
+footer > div {
+    width: 100%;            
+}
+footer > div > article {
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;            
+}
+
+footer > .banner1 {
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 40px;
+    box-sizing: border-box;        
+}
+
+footer > .banner2 {
+    height: 196px;
+    margin-top: 64px;    
+    background-color: rgb(0, 92, 185);
+    text-align: center;
+}
+
+footer > .banner2 > a {
+    display: inline-block;
+    margin-top: -44px;
+}
+
+footer > .content {
+    height: 205px;
+}
+
+footer .logo {
+    height: 46px;
+    margin-top: 20px;
+}
+
+footer > .content p {
+    color: #666;
+    font-size: 12px;
+    line-height: 24px;
+    margin-top: 24px;
+}
+footer > .content p > a {
+    font-size: 13px;
+    font-weight: normal;
+    color: #231f20;
+}
+
+footer > .award {
+    height: 78px;
+    background: #f5f5f5;
+}
+
+footer > .award img {
+    margin-top: 17px;
+    margin-left: 9px
+}
+
+footer > .award img:first-child {margin: 0;}

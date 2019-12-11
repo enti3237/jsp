@@ -29,11 +29,12 @@ public class SQL {
 	
 	// 게시물관련
 	
-	public static final String SELECT_ARTICLE_TOTAL = "SELECT COUNT(*) FROM `BOARD_ARTICLE` WHERE `parent`=0;";
+	public static final String SELECT_LATEST_BOARD = "SELECT `title`, SUBSTRING(`rdate`, 3, 8) FROM `BOARD_ARTICLE` WHERE `cate`=? ORDER BY `seq` desc LIMIT 5";
+	public static final String SELECT_ARTICLE_TOTAL = "SELECT COUNT(*) FROM `BOARD_ARTICLE` WHERE `parent`=0 AND `cate`=?";
 	public static final String SELECT_ARTICLE_LIST = "SELECT a.*, b.nick FROM `BOARD_ARTICLE` AS a "
 													+ "JOIN `BOARD_MEMBER` AS b "
 													+ "ON a.uid = b.uid "
-													+ "WHERE a.parent = 0 "
+													+ "WHERE a.parent = 0 AND cate=? "
 													+ "ORDER BY seq DESC "
 													+ "LIMIT ?, 10;";			// LIMIT 0, 10이 1페이지
 	

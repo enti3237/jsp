@@ -9,7 +9,8 @@ public class RegisterService implements CommonService {
 
 	@Override
 	public String requestProc(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+
+		// 목록 화면으로 이동 (절대주소를 잡으면 안됨)
 		return "/user/register.jsp";
 	}
-
 }

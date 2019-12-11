@@ -1,0 +1,1071 @@
+/* 서브페이지 공통 */
+#sub {
+}
+
+#sub > .sub-menu {
+    width: 100%;
+    height: 40px;
+    background: #dad2b4;
+}
+
+#sub > div {
+    width: 100%;
+}
+
+
+/* 예매 - 영화선택 페이지(choice-movie.html) */
+#sub.choice-movie > div > article {
+    position: relative;
+    width: 980px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#sub.choice-movie .side-banner {
+    position: absolute;
+}
+#sub.choice-movie .side-banner.left {
+    left: -170px;
+    top: 153px;
+}
+#sub.choice-movie .side-banner.right {
+    right: -170px;
+    top: 153px;
+}
+
+#sub.choice-movie > .theater {
+    height: 728px;
+    background: #f9f6ec;
+}
+
+/* 예매 - 상단달력 */
+#sub.choice-movie > .theater .calendar {
+    position: relative;
+    width: 100%;
+    height: 132px;
+    padding-top: 26px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+#sub.choice-movie > .theater .calendar > nav {
+    float: left;
+    margin-left: 83px;
+    margin-top: 0px;
+}
+
+#sub.choice-movie > .theater .calendar > nav > .month {            
+    font-size: 34px;
+    margin: 0 15px 0 0;
+    border-bottom: 2px solid #231f20;
+    font-family: 'Linux Libertine';
+    color: #231f20;
+    font-weight: bold;
+}
+
+#sub.choice-movie > .theater .calendar > nav > .year{            
+    font-weight: bold;            
+    color: #666;
+    font-size: 12px;
+}
+
+
+#sub.choice-movie > .theater .calendar > div {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -421px;
+    width: 842px;
+    height: 50px;
+}
+
+#sub.choice-movie > .theater .calendar ul {
+    overflow: hidden;
+}
+
+
+#sub.choice-movie > .theater .calendar ul > li {
+    float: left;
+    width: 60px;
+    height: 48px;            
+}
+
+#sub.choice-movie > .theater .calendar ul > li.on span {
+    background: #231f20;
+    color: #fff;
+    border-radius: 15px;
+}
+
+#sub.choice-movie > .theater .calendar ul > li.day a {color: #231f20}
+#sub.choice-movie > .theater .calendar ul > li.sat a {color: #407bbb}
+#sub.choice-movie > .theater .calendar ul > li.sun a {color: #cd190b}
+
+
+#sub.choice-movie > .theater .calendar ul a {
+    display: block;
+    color: #231f20;
+    text-align: center;
+}
+#sub.choice-movie > .theater .calendar ul em {
+    display: block;            
+    font-size: 13px;
+    padding-bottom: 5px;
+    font-style: normal;
+}
+#sub.choice-movie > .theater .calendar ul span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;       
+}
+
+/* 예매 - 내용부 공통 */
+#sub.choice-movie > .theater section {
+    width: 100%;
+    height: auto;
+    border-top: 2px solid #23333b;
+    box-sizing: border-box;
+    background: #fff;
+    overflow: hidden;
+}
+
+#sub.choice-movie > .theater section > div {
+    float: left;            
+}
+
+#sub.choice-movie > .theater section > div > div {
+    width: 100%;
+    height: 56px;
+    border-bottom: 1px solid #dedede;   
+    padding: 0 20px;
+    box-sizing: border-box;
+    line-height: 56px;
+}
+
+#sub.choice-movie > .theater section > div h3   {float: left;font-size: 20px;font-weight: bold;color: #231f20;}
+#sub.choice-movie > .theater section > div h4   {float: left;font-size: 14px;font-weight: bold;color: #231f20;}
+#sub.choice-movie > .theater section > div span {float: right;font-size: 13px;color: #777;}
+#sub.choice-movie > .theater section > div p    {float: right;font-size: 13px;color: #777;}
+#sub.choice-movie > .theater section > div a.login {    
+    display: inline-block;
+    width: 70px;
+    height: 28px;            
+    line-height: 28px;
+    font-size: 13px;
+    margin-left: 16px;
+    text-align: center;
+    border: 1px solid #999;
+    background: #fff;
+    color: #231f20;
+}
+#sub.choice-movie > .theater section > div a.login::before {
+    background-image: url('../img/ico_btn_login.png');
+    content: "";
+    display: inline-block;
+    height: 13px;
+    width: 11px;
+    position: relative;
+    left: -4px;
+    top: 2px;            
+}
+
+#sub.choice-movie > .theater section > div > article {
+    width: 100%;
+    height: 462px;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#sub.choice-movie > .theater section > div > article > h4 {            
+    background-image: url('../img/header_gnb_bullet.gif');
+    background-repeat: no-repeat;
+    background-position: left 5px;            
+    margin-bottom: 16px;
+    padding-left: 10px;
+}
+
+/* 예매 - 왼쪽 영화관 */
+#sub.choice-movie > .theater section > .region {
+    width: 600px;
+}
+
+#sub.choice-movie > .theater section > .region ul{
+    position: relative;
+    clear: both;
+    width: 568px;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#sub.choice-movie > .theater section > .region ul > li {
+    width: 130px;
+    height: 48px;
+}
+#sub.choice-movie > .theater section > .region ul > li > a {
+    display: block;
+    width: 100%;
+    height: 40px;            
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;            
+    line-height: 40px;
+    padding-left: 14px;
+    box-sizing: border-box;
+}
+
+#sub.choice-movie > .theater section > .region ul > li.active > a {
+    background: #231f20;
+    color: #fff;
+}
+#sub.choice-movie > .theater section > .region ul ol {
+    position: absolute;
+    left: 140px;
+    top: 0px;
+    display: none;
+    width: 418px;
+    height: 100%;
+}
+#sub.choice-movie > .theater section > .region ul ol.on {display: block;}
+
+#sub.choice-movie > .theater section > .region ul ol > li {
+    float: left;
+    width: 128px;
+    height: 40px;
+    margin-right: 9px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+#sub.choice-movie > .theater section > .region ul ol > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #efefef;
+    background: #efefef;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+
+#sub.choice-movie > .theater section > .region ul ol > li.chk > a {
+    padding: 0 25px;
+    border: 1px solid #999;
+    color: #231f20;
+    font-weight: bold;
+    background: #fff url('../img/bg_check.png') no-repeat 10px 50%;
+}
+
+/* 예매 - 오른쪽 영화순위 */
+#sub.choice-movie > .theater section > .rank {
+    width: 380px;
+    border-left: 1px solid #c0c0c0;
+    box-sizing: border-box;
+}
+
+#sub.choice-movie > .theater section > .rank a.on {
+    color: #231f20;
+    font-weight: bold;
+}
+
+#sub.choice-movie > .theater section > .rank ul {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#sub.choice-movie > .theater section > .rank ul > li > a {
+    display: block;
+    width: 240px;            
+    margin-bottom: 24px;
+    overflow: hidden;            
+
+}
+
+#sub.choice-movie > .theater section > .rank ul .grade {
+    float: left;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: -4px;
+    font-size: 0;
+    background-image: url('../img/sprite_bg_grade.png');
+    overflow: hidden;
+}
+
+#sub.choice-movie > .theater section > .rank ul .gradeAll { background-position: 0 0;}
+#sub.choice-movie > .theater section > .rank ul .grade12  {background-position: -21px 0;}
+#sub.choice-movie > .theater section > .rank ul .grade15  {background-position: -42px 0;}
+#sub.choice-movie > .theater section > .rank ul .grade18  {background-position: -63px 0;}
+#sub.choice-movie > .theater section > .rank ul .grade19  {background-position: -84px 0;}
+
+
+#sub.choice-movie > .theater section > .rank ul .tit {
+    float: left;            
+    display: block;
+    width: 214px;                        
+    font-size: 14px;
+    margin-left: 6px;            
+    overflow: hidden;            
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #231f20;
+    font-size: 14px;
+    line-height: 22px;
+    margin-left: 6px;            
+}
+
+/* 예매 - 상영시간 */
+#sub.choice-movie > .showtime {
+    min-height: 554px;
+}
+
+#sub.choice-movie > .showtime .info {
+    width: 980px;          
+    height: 65px;  
+    color: #231f20;                        
+    font-size: 16px;
+    background: #dad2b4;
+    padding-top: 24px;
+    box-sizing: border-box;
+}
+
+#sub.choice-movie > .showtime .info > em {            
+    font-style: normal;
+    margin-left: 32px;
+}
+#sub.choice-movie > .showtime .info > span {            
+    font-weight: bold;
+    margin-left: 24px;
+}
+#sub.choice-movie > .showtime .info > .infoDate {}
+#sub.choice-movie > .showtime .info > .infoTheater {}
+#sub.choice-movie > .showtime .info > .infoMovie {}
+
+#sub.choice-movie > .showtime section {
+    position: relative;
+    width: 100%;
+    min-height: 489px;
+    padding: 40px 0;            
+    box-sizing: border-box;
+}
+#sub.choice-movie > .showtime section > h1 {
+    color: #231f20;
+    font-size: 24px;
+}
+#sub.choice-movie > .showtime section > h1 > span {
+    margin-left: 8px;
+    font-size: 13px;
+    color: #777;
+    font-weight: normal;
+}
+
+#sub.choice-movie > .showtime section > .nodata {                        
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -140px;
+    margin-top: -12px;
+    width: auto;
+    height: 24px;
+    padding-top: 2px;
+    padding-left: 30px;
+    background: url('../img/ico_nodata.png') no-repeat;
+    font-size: 18px;
+    color: #777;
+    box-sizing: border-box;
+}
+
+#sub.choice-movie > .showtime .banner {
+    height: 230px;
+}
+
+
+
+
+/* 예매 - 인원/좌석선택 페이지(choice-seat.html) */
+#sub.choice-seat {
+    width: 100%;
+}
+#sub.choice-seat > section {width: 100%;}
+#sub.choice-seat > section:nth-of-type(1) {background: #f9f6ec;}
+#sub.choice-seat > section:nth-of-type(2) {background: #ffffff;}
+#sub.choice-seat > section:nth-of-type(3) {border-top: 1px solid #e0e0e0;}
+#sub.choice-seat > section:nth-of-type(4) {background: #cdc197;}
+#sub.choice-seat > section:nth-of-type(5) {background: #33373a;}
+#sub.choice-seat > section > div {
+    width: 980px;
+    margin: 0 auto;
+}
+#sub.choice-seat .seat-setting {
+    height: 262px;
+    padding: 50px 0 30px;
+    box-sizing: border-box;
+}
+#sub.choice-seat .seat-setting > h1 {            
+    padding-bottom: 20px;
+    font-size: 28px;
+    color: #231f20;
+}
+#sub.choice-seat .seat-setting > div {
+    width: 100%;
+    height: 134px;
+    background: #fff;
+    padding: 10px 28px;
+    box-sizing: border-box;
+}
+
+#sub.choice-seat .seat-setting > div > div:first-child {
+    padding: 10px 0 10px;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+#sub.choice-seat .seat-setting > div > div:nth-child(2) {
+    padding: 20px 0;            
+}
+
+#sub.choice-seat .seat-setting > div span {
+    display: inline-block;
+    width: 90px;            
+    font-weight: bold;
+    font-size: 14px;
+    color: #231f20;            
+}
+
+#sub.choice-seat .seat-setting > div select {
+    width: 70px;
+    margin-right: 36px;
+    padding: 6px 0 6px 10px;            
+    border: 1px solid #b9b9b9;
+    color: #666;            
+    box-sizing: border-box;            
+    font-size: 13px;
+}
+
+#sub.choice-seat .seat-setting > div select > option {
+    display: block;
+    padding: 6px 0 6px 10px;            
+    border: 1px solid #b9b9b9;
+    color: #666;            
+    box-sizing: border-box;            
+    font-size: 13px;
+}
+
+#sub.choice-seat .seat-setting > div img {
+    margin-bottom: -2px;                      
+}
+
+#sub.choice-seat .seat-setting > div em {
+    float: right;
+    font-size: 13px;
+    color: #777;
+    font-style: normal;
+}
+
+
+#sub.choice-seat .seat-area {
+    min-height: 450px;
+    overflow: hidden;
+}
+
+#sub.choice-seat .seat-area > .screen {
+    display: block;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    margin-top: 20px;
+    margin-bottom: 15px;            
+    background-image: url('../img/bg_screen.gif');            
+    text-align: center;            
+}
+#sub.choice-seat .seat-area > .screen > em {
+    font-size: 20px;
+    color: #231f20;                        
+}
+
+#sub.choice-seat .seat-area > article {
+    width: 100%;
+    height: auto;
+    background: #f9f8f3;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+#sub.choice-seat .seat-area > article > ul {
+    width: 400px;
+    margin: 0 auto;
+    
+}
+#sub.choice-seat .seat-area > article > ul > li {            
+    overflow: hidden;
+}
+#sub.choice-seat .seat-area > article .tit {
+    float: left;
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 23px;
+}
+#sub.choice-seat .seat-area > article a {
+    float: left;
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: #848484;
+    text-align: center;
+    color: #fff;
+    font-size: 11px;
+    line-height: 23px;
+    box-sizing: border-box;
+    margin: 2px;
+}
+
+#sub.choice-seat .seat-area > p {
+    font-size: 12px;
+    color: #666;
+    margin-top: 26px;            
+    line-height: 18px;
+}
+
+#sub.choice-seat .seat-area > ol {
+    float: right;
+    margin: 26px 0;
+}
+#sub.choice-seat .seat-area > ol > li {
+    float: left;
+    margin-left: 27px;
+    padding-left: 22px;
+    font-size: 13px;
+    color: #666;
+    line-height: 14px;            
+}
+#sub.choice-seat .seat-area > ol > li > i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    margin-bottom: -3px;
+    background-image: url('../img/sprite_bg_seat.png');
+}
+#sub.choice-seat .seat-area > ol > li:first-child > i {
+    width: 32px;
+    margin-bottom: -6px;
+    background-position-x: 32px;
+}
+#sub.choice-seat .seat-area > ol > li:nth-child(2) > i {background-position-x: 0px;}
+#sub.choice-seat .seat-area > ol > li:nth-child(3) > i {background-position-x: -14px;}
+#sub.choice-seat .seat-area > ol > li:nth-child(4) > i {background-position-x: -28px;}
+#sub.choice-seat .seat-area > ol > li:nth-child(5) > i {background-position-x: -42px;}
+
+
+#sub.choice-seat .seat-info {
+    height: 38px;
+}
+
+#sub.choice-seat .seat-info > ol {}
+#sub.choice-seat .seat-info > ol > li {
+    float: left;            
+    margin: 10px 34px;
+    line-height: 18px;
+}
+#sub.choice-seat .seat-info > ol > li > i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    margin-bottom: -3px;
+    background-image: url('../img/sprite_bg_seat.png');
+    background-position-y: 14px;
+}
+#sub.choice-seat .seat-info > ol > li:nth-child(1) > i {background-position-x: 0px;}
+#sub.choice-seat .seat-info > ol > li:nth-child(2) > i {background-position-x: -14px;}
+#sub.choice-seat .seat-info > ol > li:nth-child(3) > i {background-position-x: -28px;}
+#sub.choice-seat .seat-info > ol > li:nth-child(4) > i {background-position-x: -42px;}
+#sub.choice-seat .seat-info > ol > li:nth-child(5) > i {background-position-x: -56px;}
+#sub.choice-seat .seat-info > ol > li:nth-child(6) > i {background-position-x: -70px;}
+
+
+#sub.choice-seat .back-and-pay {
+    height: 50px;
+}
+
+#sub.choice-seat .back-and-pay > a {
+    display: inline-block;
+}
+#sub.choice-seat .back-and-pay > a:nth-child(1) {
+    float: left;
+    height: 16px;     
+    margin-top: 16px;       
+    padding-left: 29px;
+    color: #231f20;
+    font-size: 14px;
+    font-weight: bold;
+    box-sizing: border-box;
+    text-align: center;            
+    background: url('../img/btn_total_prev.png') no-repeat;
+}
+#sub.choice-seat .back-and-pay > a:nth-child(2) {
+    float: right;
+    width: 115px;
+    height: 28px;
+    margin-top: 8px;
+    color: #231f20;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #b2a168;
+    background: #f5f3ea;
+    line-height: 26px;
+    text-align: center;            
+}
+
+#sub.choice-seat .total-info {
+    height: 198px;
+}
+
+#sub.choice-seat .total-info > div {
+    position: relative;
+    float: left;
+    width: 33.33%;
+    height: 100%;
+    padding: 16px;
+    border-right: 1px solid #515151;
+    box-sizing: border-box;    
+}
+
+#sub.choice-seat .total-info > div:first-child {
+    border-left: 1px solid #515151;
+}
+
+#sub.choice-seat .total-info span {
+    display: block;
+    margin-bottom: 10px;
+    color: #cdc197;
+    font-size: 14px;
+}
+
+#sub.choice-seat .total-info .poster {
+    float: left;
+    width: 65px;
+}
+
+#sub.choice-seat .total-info .movie-info {
+    float: left;
+    color: #fff;
+    margin-left: 10px;
+    font-size: 14px;
+}
+#sub.choice-seat .total-info .movie-info > strong {            
+    display: block;
+}
+
+#sub.choice-seat .total-info .movie-info > b {
+    display: block;
+    font-weight: normal;
+    margin-top: 16px;
+}
+#sub.choice-seat .total-info .movie-info > em {
+    display: block;
+    font-style: normal;
+    font-size: 12px;
+    margin-top: 36px;
+}
+
+#sub.choice-seat .total-info table {width: 100%;}
+#sub.choice-seat .total-info table tr {}
+#sub.choice-seat .total-info table tr > td:nth-child(1){
+    color: #a7a9ac;
+    font-size: 14px;
+    line-height: 22px;
+}
+#sub.choice-seat .total-info table tr > td:nth-child(2){
+    color: #fff;
+    font-size: 14px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+#sub.choice-seat .total-info table tr > td.right {
+    text-align: right;
+}
+
+#sub.choice-seat .total-info h2 {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    font-size: 22px;
+    font-weight: normal;
+    color: #fff;            
+}
+#sub.choice-seat .total-info h2 > span {
+    display: inline;
+    color: #fff;
+}
+
+
+/* 예매 - 주문/결제 확인 페이지(order-confirm.html) */
+#sub.order-confirm {
+    width: 100%;
+}
+#sub.order-confirm > section {width: 100%;}
+#sub.order-confirm > section:nth-of-type(1) {background: #f9f6ec;}
+#sub.order-confirm > section:nth-of-type(2) {background: #ffffff;}        
+#sub.order-confirm > section:nth-of-type(3) {background: #cdc197;}
+#sub.order-confirm > section:nth-of-type(4) {background: #282e34;}
+#sub.order-confirm > section > div {
+    width: 980px;
+    margin: 0 auto;
+}
+#sub.order-confirm .movie-info {
+    height: 374px;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+#sub.order-confirm .movie-info > h1 {
+    padding-bottom: 20px;
+    font-size: 28px;
+    color: #231f20;
+}
+#sub.order-confirm .movie-info > article {
+    border-top: 2px solid #231f20;
+}
+#sub.order-confirm .movie-info > article > div {}
+#sub.order-confirm .movie-info > article > div:nth-child(1) {
+    width: 100%;
+    height: 135px;
+    background: #fff;
+    padding: 20px 50px;
+    box-sizing: border-box;
+}        
+#sub.order-confirm .movie-info > article > div:nth-child(2) {
+    width: 100%;
+    height: 80px;
+    background: #dad2b4;
+    padding: 30px 50px;
+    box-sizing: border-box;
+}
+
+#sub.order-confirm .movie-info img {
+    float: left;
+    width: 65px;
+}
+#sub.order-confirm .movie-info table {
+    float: left;
+    margin-left: 26px;
+    text-align: left;
+}
+#sub.order-confirm .movie-info table tr {
+    
+}
+#sub.order-confirm .movie-info table tr > th {            
+    width: 80px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #666;
+    line-height: 19px;
+}
+#sub.order-confirm .movie-info table tr > td {
+    width: 220px;
+    color: #231f20;
+    font-size: 14px;
+}
+#sub.order-confirm .movie-info table tr > .tit {            
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #231f20;            
+}
+
+#sub.order-confirm .movie-info h2 {
+    float: right; 
+    font-size: 24px;
+    color: #231f20;
+    line-height: 96px;
+}
+#sub.order-confirm .movie-info h2 > i {font-style: normal; font-size: 14px;}
+#sub.order-confirm .movie-info h3 {float: right; font-size: 30px;color: #231f20;}
+#sub.order-confirm .movie-info h3 > i {font-style: normal; font-size: 14px;}
+#sub.order-confirm .movie-info strong {
+    font-size: 18px;
+    font-weight: normal;
+    color: #231f20;
+}
+
+#sub.order-confirm .dc-coupon {
+    min-height: 500px;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+#sub.order-confirm .dc-coupon > h1 {
+    padding-bottom: 20px;
+    font-size: 28px;
+    color: #231f20;
+}
+
+#sub.order-confirm .dc-coupon > a {
+    display: block;
+    width: 100%;
+    height: 70px;
+    padding: 25px 30px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #231f20;
+    background-color: #f5f5f5;
+    background-image: url('../img/btn_order_off.png');
+    background-repeat: no-repeat;
+    background-position: 97% center;
+    border: 1px solid #dedede;
+    color: #000;
+    box-sizing: border-box;
+}
+#sub.order-confirm .dc-coupon > a.on {
+    color: #cdc197;
+    background-image: url('../img/btn_order_on.png');
+    background-color: #282e34;
+    border: 1px solid #282e34;
+}
+
+#sub.order-confirm .dc-coupon > article {
+    display: none;
+    width: 100%;            
+    border: 1px solid #dedede;
+    border-top: none;
+    padding: 30px 30px 50px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#sub.order-confirm .dc-coupon > article.on {
+    display: block;
+}
+
+
+#sub.order-confirm .back {
+    height: 50px;
+}
+
+#sub.order-confirm .back > a {
+    display: inline-block;
+    height: 16px;     
+    margin-top: 16px;       
+    padding-left: 29px;
+    color: #231f20;
+    font-size: 14px;
+    font-weight: bold;
+    box-sizing: border-box;
+    text-align: center;            
+    background: url('../img/btn_total_prev.png') no-repeat;
+}
+
+#sub.order-confirm .total-price {
+    height: 268px;
+}
+
+#sub.order-confirm .total-price > div {
+    position: relative;
+    float: left;
+    width: 33.33%;
+    height: 100%;
+    padding: 30px;
+    border-right: 1px solid #515151;
+    box-sizing: border-box;
+}
+
+#sub.order-confirm .total-price > div:first-child {
+    border-left: 1px solid #515151;
+}
+
+#sub.order-confirm .total-price span {
+    display: block;
+    margin-bottom: 16px;
+    color: #cdc197;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#sub.order-confirm .total-price p {
+    color: #a7a9ac;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+#sub.order-confirm .total-price p > strong {
+    font-weight: normal;
+}
+#sub.order-confirm .total-price p > em {
+    float: right;
+    color: #fff;
+    font-style: normal;
+}
+
+#sub.order-confirm .total-price h5 {
+    float: right;
+    font-size: 24px;
+    color: #fff;
+    margin-top: 100px;
+}
+
+#sub.order-confirm .total-price h5 > em {
+    font-style: normal;
+}
+
+#sub.order-confirm .total-price > .pay > h4 {
+    float: right;
+    font-size: 40px;
+    color: #fff;
+}
+#sub.order-confirm .total-price > .pay > h4 > i {
+    font-size: 24px;
+    font-style: normal;
+}
+
+#sub.order-confirm .total-price > .pay > a {
+    clear: both;
+    display: block;
+    width: 100%;
+    height: 70px;
+    margin-top: 120px;
+    line-height: 70px;
+    font-size: 24px;
+    background: #b49763;
+    font-weight: bold;
+    color: #231f20;
+    text-align: center;
+}
+
+/* 예매 - 결제완료 페이지(order-result.html) */
+#sub.order-result {
+    width: 100%;
+}
+#sub.order-result > section {width: 100%;}
+#sub.order-result > section:nth-of-type(1) {background: #f9f6ec;}
+
+#sub.order-result > section > div {
+    width: 980px;
+    margin: 0 auto;
+}
+#sub.order-result .save-point {
+    height: auto;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+#sub.order-result .save-point > h1 {
+    padding-bottom: 20px;
+    font-size: 28px;
+    color: #231f20;
+}
+
+#sub.order-result .save-point > p {
+    font-size: 18px;
+    font-weight: normal;
+    color: #666;
+    line-height: 26px;
+    margin-bottom: 24px;
+}
+#sub.order-result .save-point > p > strong {
+    color: #cd190b;
+}
+
+#sub.order-result .save-point > h2 {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    padding: 0px 30px;
+    color: #cdc197;
+    background-color: #282e34;
+    border: 1px solid #282e34;
+    box-sizing: border-box;
+}
+#sub.order-result .save-point > article {
+    width: 100%;
+    border: 1px solid #dedede;
+    border-top: none;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #fff;
+    overflow: hidden;
+}
+#sub.order-result .save-point > article > label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #231f20;
+}
+#sub.order-result .save-point > article > label > input {
+    margin-right: 6px;            
+}
+
+#sub.order-result .save-point > article > div {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    border-top: 1px solid #d0d0d0;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+#sub.order-result .save-point > article > div.checked {
+    border-top: 1px solid #231f20;
+}
+
+#sub.order-result .save-point .member {}
+
+#sub.order-result .save-point .member.checked > p {
+    color: #231f20;
+}
+
+#sub.order-result .save-point .member > p {
+    text-align: center;
+    font-size: 14px;
+    color: #d0d0d0;
+}
+#sub.order-result .save-point .member > p > strong {}
+
+#sub.order-result .save-point .card {
+    color: #d0d0d0;
+}
+#sub.order-result .save-point .card > span {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}
+#sub.order-result .save-point .card > input {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #dedede;
+    background: #f5f5f5;
+}
+
+#sub.order-result .save-point .btn {
+    border: none;
+    text-align: center;
+}
+#sub.order-result .save-point .btn > a {
+    display: inline-block;
+    width: 120px;
+    height: 40px;  
+    margin-left: 6px;
+    line-height: 40px;
+    text-align: center;          
+    border: 1px solid #999;
+    color: #231f20;
+    font-size: 14px;
+    font-weight: bold;
+    background: #fff;
+}
+
+#sub.order-result .save-point > article > p {            
+    font-size: 12px;
+    color: #666;
+    margin-top: 26px;
+    line-height: 18px;
+}
+#sub.order-result .save-point > article > p > strong {
+    display: block;
+    color: #231f20;
+    margin-bottom: 10px;
+}

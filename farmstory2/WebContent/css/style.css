@@ -192,66 +192,66 @@ header > .gnb {
 }
 
 /* 바로가기 배너 영역 */
-.quick {
+.main > .quick {
 	width: 100%;
 	height: 74px;
 	margin-top: 10px;
 	overflow: hidden;
 }
 
-.quick > a {
+.main > .quick > a {
 	float: left;
 	display: block;
 	width: 50%;
 	height: 100%;
 }
 
-.quick > a:nth-child(1) {
+.main > .quick > a:nth-child(1) {
 	background: url('../img/main_banner_sub1_bg.jpg');
 }
-.quick > a:nth-child(2) {
+.main > .quick > a:nth-child(2) {
 	background: url('../img/main_banner_sub2_bg.jpg');
 }
-.quick img {
+.main > .quick img {
 	margin-top: 17px;
 	margin-left: 20px;
 }
 
 /* 최신글 리스트 영역 */
-.latest {
+.main > .latest {
 	width: 100%;
 	height: 186px;
 	margin-top: 10px;
 	overflow: hidden;
 }
 
-.latest > div {
+.main > .latest > div {
 	position: relative;
 	float: left;
 	width: 33.333%;
 	height: 100%;
 }
 
-.latest > div > a {
+.main > .latest > div > a {
 	position: absolute;
 	left: 0;
 	top: 12px;
 }
 
-.latest > div > img {
+.main > .latest > div > img {
 	position: absolute;
 	left: 0;
 	bottom: 25px;
 }
 
-.latest > div > table {
+.main > .latest > div > table {
 	position: absolute;
 	right: 10px;
 	bottom: 22px;
 }
 
 /* 영역에 글자가 넘칠경우 개행되지 않고 말줌임(...) 으로 처리하는 속성 */
-.latest table tr > td:nth-child(2) {
+.main > .latest table tr > td:nth-child(2) {
 	display: block;
 	width: 128px;
 	white-space: nowrap;
@@ -261,7 +261,7 @@ header > .gnb {
 }
 
 /* 정보 영역 */
-.info {
+.main > .info {
 	width: 100%;
 	height: 154px;
 	background: url('../img/main_cs_top_line.png') 0px -3px no-repeat;
@@ -269,42 +269,42 @@ header > .gnb {
 	overflow: hidden;
 }
 
-.info > div {
+.main > .info > div {
 	float: left;
 	height: 118px;
 	margin-top: 14px;
 }
-.info > div:nth-child(1) { width: 385px; }
+.main > .info > div:nth-child(1) { width: 385px; }
 
-.info > div:nth-child(1) > div:nth-child(2) {
+.main > .info > div:nth-child(1) > div:nth-child(2) {
 	position: relative;
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
 
-.info > div:nth-child(1) > div:nth-child(2) > img {
+.main > .info > div:nth-child(1) > div:nth-child(2) > img {
 	margin-left: 7px;
 }
 
-.info > div:nth-child(1) ul {
+.main > .info > div:nth-child(1) ul {
 	position: absolute;
 	right: 38px;
 	top: 0;
 }
 
-.info > div:nth-child(2) {
+.main > .info > div:nth-child(2) {
 	width: 229px;
 	border-left: 1px solid #d7d7d7;
 	border-right: 1px solid #d7d7d7;
 	padding-left: 22px;
 	box-sizing: border-box;
 }
-.info > div:nth-child(2) > ul {
+.main > .info > div:nth-child(2) > ul {
 	margin-top: 20px;
 	color: #666;
 }
 
-.info > div:nth-child(3) { width: 364px; }
+.main > .info > div:nth-child(3) { width: 364px; }
 
 /* 푸터영역 */
 footer {
@@ -428,7 +428,7 @@ aside > .pg5 > li:nth-child(5):hover { background: url('../img/sub_cate5_lnb5_ov
 .sub article {
 	float: left;
 	width: 803px;
-	min-height: 649px;
+	min-height: 400px;
 	padding-left: 43px;
 	box-sizing: border-box;
 }
@@ -471,3 +471,190 @@ article > .content1 > div {
 .sub.user article > nav {
 	width: 100%;
 }
+
+
+/* 이용약관 */
+.sub.user .terms {    
+	width: 600px;
+    height: 602px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.sub.user .terms table { 
+	width:100%;
+	border-top: 2px solid #000; 
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.sub.user .terms td {
+	padding: 7px 10px;
+    border: 1px solid #e9e9e9;
+    background: transparent;
+}
+
+.sub.user .terms td > div {
+	float: right;
+	padding-top: 6px;
+}
+
+.sub.user .terms caption {
+	padding: 10px 0;
+    font-weight: bold;
+    text-align: left;
+}
+    
+.sub.user .terms textarea {
+	width:99%;
+	height:200px; 
+	resize:none;
+	border:1px solid #e4eaec;
+	background:#f7f7f7;
+	color:#000;
+	vertical-align:middle;
+	line-height:2em; 
+	margin-bottom: 2px;	
+	padding:2px 2px 3px;
+}
+
+.sub.user .terms > div { float: right; margin-top: 16px; }
+
+
+
+/* 회원가입 */
+.sub.user .register { 
+	width: 600px; 
+	margin: 20px auto;
+	overflow: hidden; 
+}
+
+.sub.user .register table { 
+	width:100%;
+	border-top: 2px solid #000000; 
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.sub.user .register caption {
+	padding: 10px 0;
+	font-weight:bold;
+	text-align:left;
+}
+
+.sub.user .register td:nth-child(1) {
+	width:70px;
+	padding:7px 13px;
+	border:1px solid #e9e9e9; 
+	background:#f5f8f9;
+	text-align:left;
+}
+.sub.user .register td:nth-child(2) {
+	padding:7px 10px; 
+	border:1px solid #e9e9e9; 
+	background:transparent;
+}
+.sub.user .register table input {
+	height:22px; 
+	border:1px solid #e4eaec;
+	background:#f7f7f7;
+	color:#000;
+	vertical-align:middle;
+	line-height:2em; 
+	margin-bottom: 2px;
+}
+.sub.user .register .info {
+	display:block;
+	padding:0 0 5px;
+	line-height:1.4em;
+}
+
+.sub.user .register > form > div { float: right; margin-top: 16px; }
+
+.sub.user .register .btnFind {
+	padding: 4px;
+    border: 1px solid #bebebe;
+    background: #e9e9e9;
+    color: #222;
+    cursor: pointer;
+}
+
+.sub.user .register .join {
+	padding:7px;
+	border:1px solid #bebebe;
+	background:#e9e9e9;
+	color:#222;
+	cursor:pointer
+}
+
+.sub.user .register .cancel {
+	padding:8px;
+	border:1px solid #bebebe;
+	background:#fdfdfd;
+	color:#222;
+	cursor:pointer
+}
+
+
+/* 로그인 */
+.sub.user .login {
+	width: 360px;
+	padding: 100px 0;
+	margin: 0 auto;
+}
+
+.sub.user .login > form {
+	position: relative;
+	padding: 20px 20px 20px 50px;
+	border: 1px solid #cfded8;
+	border-bottom: 0;
+	background: #fff;
+	margin: 0;
+}
+.sub.user .login img { width: 20px; }
+.sub.user .login table input {
+	display: block;
+    width: 162px;
+    height: 22px;
+    margin: 0 0 5px 0px;
+    border: 1px solid #e4eaec;
+    background: #f7f7f7;
+    color: #000;
+    vertical-align: middle;
+    line-height: 2em;
+}
+
+.sub.user .login .btnLogin {
+	position: absolute;
+	right: 52px;
+	top: 22px;
+	width: 60px;
+    height: 55px;
+    padding: 8px;
+    border: 1px solid #bebebe;
+    background: #fdfdfd;
+    color: #222;
+    cursor: pointer;
+}
+
+.sub.user .login > .info {
+	margin: 0 0 30px;
+    padding: 20px;
+    border: 1px solid #cfded8;
+    background: #f5f6fa;
+}
+
+.sub.user .login > .info > p { padding: 10px 0; line-height: 1.5em; }
+.sub.user .login > .info > div { text-align: right; }
+
+
+/* 공통(로그인, 약관, 회원가입) */
+.sub.user .btnCancel { padding:8px; border:1px solid #bebebe; background:#fdfdfd; color:#222; }
+.sub.user .btnNext   { padding:8px; border:1px solid #bebebe; background:#e9e9e9; color:#222; }
+.sub.user .btnJoin   { padding:7px; border:1px solid #bebebe; background:#e9e9e9; color:#222; }
+.sub.user .btnFind   { padding:4px; border:1px solid #e4eaec; background:#fdfdfd; color:#222; }
+
+
+
+
+
+
+

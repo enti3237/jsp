@@ -9,6 +9,13 @@ public class WriteService implements CommonService{
 
 	@Override
 	public String requestProc(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+		
+		String boardGroup = req.getParameter("group");
+		String category  = req.getParameter("cate");
+		
+		req.setAttribute("boardGroup", boardGroup);
+		req.setAttribute("category", category);
+		
 		return "/board/write.jsp";
 	}
 

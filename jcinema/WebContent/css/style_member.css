@@ -1,0 +1,851 @@
+#sub {}
+#sub > div {}
+
+/* 로그인(login.html) */
+#sub.login {
+    width: 100%;
+}
+#sub.login > section {
+    width: 100%;
+    min-height: 638px;
+    margin-bottom: 36px;
+    background: #f9f6ec;
+}
+
+#sub.login > section > div {
+    width: 980px;            
+    height: auto;
+    margin: 0 auto;
+    padding: 50px 0 30px;
+    box-sizing: border-box;
+}
+
+#sub.login > section > div > h1 {
+    padding-bottom: 20px;
+    font-size: 28px;
+    color: #231f20;
+}
+
+#sub.login > section > div > article {
+    width: 100%;
+    min-height: 400px;
+    background: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+#sub.login > section > div > p {
+    width: 100%;
+    height: 82px;
+    padding: 25px 0;
+    background: #efebdb;
+    text-align: center;
+    line-height: 32px;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+
+#sub.login > section > div > p > a {
+    display: inline-block;
+    width: 90px;
+    line-height: 30px;
+    background: #fff;
+    border: 1px solid #d1d1d1;
+    margin-left: 6px;
+    font-size: 13px;
+    color: #231f20;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+}
+
+#sub.login .tab_btn {
+    width: 100%;
+    height: 53px;
+    overflow: hidden;
+}
+
+#sub.login .tab_btn > li {
+    float: left;
+    width: 33.33%;
+    height: 100%;            
+}
+
+#sub.login .tab_btn > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    border-bottom: 1px solid #24221f;
+    text-align: center;
+    font-size: 14px;
+    color: #35383d;
+    line-height: 50px;
+    box-sizing: border-box;
+}
+#sub.login .tab_btn > li:last-child > a {
+    border-right: 1px solid #dedede;
+}
+
+#sub.login .tab_btn > li.on > a {
+    border-top: 3px solid #231f20;
+    border-left: 1px solid #231f20;
+    border-right: 1px solid #231f20;
+    border-bottom: 1px solid #fff;
+    font-weight: bold;
+    color: #35383d;            
+}
+
+#sub.login .tab {
+    position: relative;            
+    width: 100%;
+    min-height: 300px;
+}
+#sub.login .tab > div {
+    display: none;
+    width: 100%;            
+}
+
+#sub.login .tab > div.on {
+    display: block;
+}
+
+
+/* 탭1 - 회원 */
+#sub.login .tab1 {}
+
+#sub.login .tab1 > form {
+    display: inline-block;
+    margin-top: 60px;
+    overflow: hidden;
+}
+#sub.login .tab1 > form > div {
+    float: left;
+}
+#sub.login .tab1 > form > div > label {
+    display: block;
+    margin-bottom: 10px;
+}
+#sub.login .tab1 > form > div span {
+    display: inline-block;
+    width: 89px;
+    height: 20px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #353535;
+}
+#sub.login .tab1 > form > div input {
+    width: 253px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #dedede;
+    background: #f5f5f5;
+    box-sizing: border-box;
+}
+
+#sub.login .tab1 > form > input[type=submit] {
+    float: left;
+    width: 98px;
+    height: 90px;
+    padding-top: 38px;
+    margin-left: 6px;
+    text-align: center;
+    font-size: 14px;
+    color: #e5e1b0 !important;
+    background: #231f20 url('../img/ico_login.png') no-repeat 50% 19px;
+}
+#sub.login .tab1 > p {
+    display: block;
+    width: 450px;   
+    padding: 20px 0 40px;       
+    font-size: 14px;
+    color: #231f20;
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    box-sizing: border-box;
+    
+}
+#sub.login .tab1 > p input {
+    vertical-align: bottom;
+    margin-right: 4px;
+}
+#sub.login .tab1 > p > a {
+    display: inline-block;
+    width: 116px;
+    height: 16px;
+    margin-left: 40px;
+    background-image: url('../img/ico_right_arrow.gif');
+    background-repeat: no-repeat;
+    background-position: right 2px;
+}
+
+#sub.login .tab1 > .banner {
+    position: absolute;
+    right: 0px;
+    top: 40px;
+}
+
+/* 탭2 - 비회원 */
+#sub.login .tab2 {}
+#sub.login .tab2 > .kakao_banner {margin-top: 46px;}
+#sub.login .tab2 > p {
+    color: #666;
+    line-height: 18px;
+    padding: 36px 0;
+}
+
+#sub.login .tab2 > textarea {
+    width: 100%;
+    height: 167px;
+    margin-bottom: 0;
+    padding: 20px;
+    border: 1px solid #dedede;
+    overflow-y: auto;
+    background: #f9f6ec;
+    font-size: 14px;
+    color: #666;
+    box-sizing: border-box;
+    text-align: left;
+    resize: none;
+}
+
+#sub.login .tab2 > .agree {
+    display: inline-block;
+    padding: 26px 0;
+    font-size: 14px;
+    color: #231f20;
+}
+
+#sub.login .tab2 > .agree > input {
+    margin-right: 4px;
+    vertical-align: bottom;
+}
+
+#sub.login .tab2 > div {
+    border-top: 1px solid #e5e5e5;
+    padding-top: 26px;
+    box-sizing: border-box;
+}
+#sub.login .tab2 > div > p {
+    line-height: 20px;
+    margin-bottom: 24px;
+}
+
+#sub.login .tab2 > div > form {}
+#sub.login .tab2 > div > form > div {}
+#sub.login .tab2 > div > form > div > label {
+    display: block;
+    margin-bottom: 10px;
+}
+#sub.login .tab2 > div > form > div > label.name input {width: 326px;}
+#sub.login .tab2 > div > form > div > label.hp input {width: 100px;}
+#sub.login .tab2 > div > form > div > label.birth {}
+#sub.login .tab2 > div > form > div > label.pass {
+    display: inline-block;
+}        
+#sub.login .tab2 > div > form > div > label.pass input {width: 100px;}        
+#sub.login .tab2 > div > form > div > label.pass2 span {text-align: center;}
+
+#sub.login .tab2 > div > form > div > label > span {
+    display: inline-block;
+    width: 120px;
+    height: 20px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #353535;
+}
+#sub.login .tab2 > div > form > div > label > select {
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: -3px;
+    padding: 10px 0;
+    border: 1px solid #e8e8e8;
+    font-size: 12px;
+    color: #555;
+    vertical-align: middle;
+}
+#sub.login .tab2 > div > form > div > label > input {
+    width: 253px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #dedede;
+    background: #f5f5f5;
+    box-sizing: border-box;
+}
+#sub.login .tab2 > div > form > input[type=submit] {
+    display: block;
+    width: 140px;
+    height: 40px;
+    margin: 20px auto;
+    padding: 0px 10px;
+    border: 1px solid #231f20;
+    background: #231f20;
+    font-size: 16px;
+    font-weight: bold;
+    color: #e5e1b0;
+    line-height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+#sub.login .tab2 > div > .banner {
+    position: absolute;
+    right: 0px;
+    bottom: 70px;
+}
+
+/* 탭3 - 소셜로그인 */
+#sub.login .tab3 {
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+#sub.login .tab3 > p {}
+#sub.login .tab3 > a.naver {
+    display: inline-block;
+    width: 220px;
+    height: 45px;
+    margin-top: 40px;
+    margin-left: 60px;
+    padding-left: 44px;
+    line-height: 45px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    background: #18c718 url('../img/ico_naver.gif') no-repeat 0 0;
+    border: 1px solid #0fa600;            
+}
+
+#sub.login .tab3 > a.naver > span {
+    padding-left: 30px;
+    border-left: 1px solid #0fa600;
+}
+
+#sub.login .tab3 > div {
+    width: 260px;
+    margin-left: 90px;
+    margin-top: 20px;
+}
+#sub.login .tab3 > div > a {
+    display: inline-block;
+    width: 116px;
+    height: 16px;
+    
+    background-image: url('../img/ico_right_arrow.gif');
+    background-repeat: no-repeat;
+    background-position: right 2px;
+    font-size: 14px;
+    color: #231f20;
+    text-align: center;
+    box-sizing: border-box;
+}
+#sub.login .tab3 > .banner {
+    position: absolute;
+    right: 0px;
+    top: 40px;
+}
+
+/* 마이시네마 (my-cinema.html) */
+#sub.my-cinema {
+    width: 100%;
+}
+#sub.my-cinema > section {
+    width: 100%;
+    min-height: 300px;
+}
+#sub.my-cinema > section:nth-of-type(1) {background: #f9f6ec;}
+#sub.my-cinema > section:nth-of-type(2) {background: #ffffff;}
+
+#sub.my-cinema > section > div {
+    width: 980px;
+    margin: 0 auto;
+}
+#sub.my-cinema .my-info {
+    height: auto;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+#sub.my-cinema .my-info > h1 {
+    padding-bottom: 20px;
+    font-size: 28px;
+    color: #231f20;
+}
+
+#sub.my-cinema .my-info > h2 {
+    overflow: hidden;
+    padding: 17px 30px 17px;
+    background: #282e34;
+}
+
+#sub.my-cinema .my-info > h2 > span {            
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+}
+#sub.my-cinema .my-info > h2 > span > em {
+    font-style: normal;
+    color: #cdc197;
+}
+#sub.my-cinema .my-info > h2 > span.name {
+    float: left;
+}
+#sub.my-cinema .my-info > h2 > span.grade {
+    color: #c5c5c5;
+    float: right;
+}        
+
+#sub.my-cinema .my-info > article {
+    width: 100%;
+    height: auto;
+    background: #fff;
+}
+
+#sub.my-cinema .my-info > article > div {
+    width: 100%;
+    padding: 26px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+    box-sizing: border-box;
+}
+#sub.my-cinema .my-info > article > section {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+#sub.my-cinema .my-info > article > section > div {
+    float: left;
+    width: 50%;            
+    height: 211px;
+    padding: 30px;
+    border-left: 1px solid #e5e5e5;
+    background: #fff;
+    box-sizing: border-box;
+}
+#sub.my-cinema .my-info > article > section > div:first-child {border-left: 0;}
+
+#sub.my-cinema .my-info > article p {
+    overflow: hidden;
+}
+#sub.my-cinema .my-info > article strong {
+    float: left;
+    padding-right: 20px;
+    font-size: 16px;
+    color: #231f20;
+}        
+
+#sub.my-cinema .my-info > article .setting {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-top: -6px;
+    background: url('../img/btn_setting.gif') no-repeat 0 0;
+    overflow: hidden;
+    font-size: 0;            
+}
+
+#sub.my-cinema .my-info > article p > a {
+    float: right;
+    display: inline-block;
+    width: 67px;
+    height: 25px;
+    border: 1px solid #999;
+    font-size: 13px;
+    color: #231f20;
+    line-height: 23px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#sub.my-cinema .my-info > article .point {
+
+}
+#sub.my-cinema .my-info > article .point > p {            
+}
+#sub.my-cinema .my-info > article .point > p > em {
+    float: left;
+    display: inline-block;
+    width: 55px;
+    height: 23px;
+    line-height: 23px;
+    margin-right: 39px;
+    background: #007fb4;
+    font-size: 12px;
+    font-style: normal;
+    color: #fff;
+    box-sizing: border-box;
+    text-align: center;
+}
+#sub.my-cinema .my-info > article .point > p > span {
+    float: right;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    padding-right: 20px;
+    background: url(../img/ico_point.png) no-repeat right 4px;
+    vertical-align: middle;
+    font-size: 32px;
+    line-height: 23px;
+    text-align: right;
+    color: #231f20;            
+    box-sizing: border-box;
+}
+#sub.my-cinema .my-info > article .point > p:nth-child(1) {}
+#sub.my-cinema .my-info > article .point > p:nth-child(2) {margin-top: 20px;}
+#sub.my-cinema .my-info > article .point > p:nth-child(3) {
+    margin-top: 40px;
+    line-height: 20px;
+}
+
+#sub.my-cinema .my-info > article .coupon {}
+#sub.my-cinema .my-info > article .coupon > ul {
+    margin-top: 30px;
+}
+#sub.my-cinema .my-info > article .coupon > ul > li {
+    margin-top: 4px;
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+}
+#sub.my-cinema .my-info > article .coupon > ul > li > span {
+    float: right;
+}
+
+#sub.my-cinema .my-info > article .coupon > ul > li > span > i {
+    font-size: 24px;
+    font-style: normal;
+    color: #231f20;
+    margin-right: 2px;
+}
+
+#sub.my-cinema .reserve-history {
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+#sub.my-cinema .reserve-history > ul {
+    overflow: hidden;
+    border-bottom: 1px solid #231f20;
+}
+#sub.my-cinema .reserve-history > ul > li {
+    float: left;
+    width: 139px;
+    height: 50px;
+    border-right: 1px solid #fff;
+    box-sizing: border-box;
+}
+#sub.my-cinema .reserve-history > ul > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    background: #efebdb;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #231f20;
+    text-align: center;
+}
+#sub.my-cinema .reserve-history > ul > li.on > a {
+    background: #231f20;
+    color: #cdc197;
+}
+#sub.my-cinema .reserve-history > div.tab {
+
+}
+#sub.my-cinema .reserve-history > .tab > div {}
+#sub.my-cinema .reserve-history > .tab > div.tab1 {}
+#sub.my-cinema .reserve-history > .tab > div.tab2 {}
+#sub.my-cinema .reserve-history > .tab > div.tab3 {}
+#sub.my-cinema .reserve-history > .tab > div.tab4 {}
+
+#sub.my-cinema .reserve-history .tab1 > article {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    border-bottom: 1px solid #c0c0c0;
+}
+#sub.my-cinema .reserve-history .tab1 > article > .nodata {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -140px;
+    margin-top: -12px;
+    width: auto;
+    height: 24px;
+    padding-top: 2px;
+    padding-left: 30px;
+    background: url('../img/ico_nodata.png') no-repeat;
+    font-size: 18px;
+    color: #777;
+    box-sizing: border-box;
+}
+#sub.my-cinema .reserve-history .tab1 > .pay-attention {
+    margin-top: 50px;
+    padding: 30px 0 30px 26px;
+    background: #f5f5f5;
+    font-size: 12px;
+    color: #666;
+    line-height: 26px;            
+    box-sizing: border-box;
+    
+}
+#sub.my-cinema .reserve-history .tab1 > .pay-attention > h5 {
+    padding: 0 0 10px 25px;
+    background: url('../img/ico_warn.gif') no-repeat left 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #231f20;
+}
+#sub.my-cinema .reserve-history .tab1 > .pay-attention > p {}
+#sub.my-cinema .reserve-history .tab1 > .pay-attention > p > span {
+    font-size: 12px;
+    color: #666;
+    line-height: 26px;
+    font-weight: bold;
+}
+#sub.my-cinema .reserve-history .tab1 > .pay-attention > p > span.important {color: #cd190b !important;}
+#sub.my-cinema .reserve-history .tab1 > .pay-attention > p > em {
+    font-style: normal;
+    color: #cd190b !important;
+}
+#sub.my-cinema .reserve-history .tab1 > .pay-attention > p > em.important {font-weight: bold;}
+
+/* 회원가입(register.html) */
+#sub.register {
+    width: 100%;
+}
+#sub.register > section {
+    width: 100%;
+}        
+#sub.register > section:nth-of-type(1) {background: #f9f6ec;}
+#sub.register > section:nth-of-type(2) {background: #ffffff;}
+
+#sub.register > section > div {
+    width: 980px;            
+    height: auto;
+    margin: 0 auto;            
+    padding: 50px 0 0px;
+    box-sizing: border-box;
+}
+
+#sub.register > section > div > h1 {            
+    padding-bottom: 20px;
+    font-size: 28px;
+    color: #231f20;
+}
+
+
+
+#sub.register .agreement {}
+
+#sub.register .agreement > article {
+    width: 100%;
+    min-height: 400px;
+    background: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+#sub.register .agreement > article > h3 {
+    color: #000;
+    font-size: 15px;
+    font-weight: normal;            
+    border-bottom: 1px solid #000000;
+    padding-bottom: 6px;
+    box-sizing: border-box;
+}
+#sub.register .agreement > article > label {
+    display: inline-block;
+    padding: 20px 0;            
+    color: #111;
+    font-size: 15px;
+    font-weight: bold;            
+}
+#sub.register .agreement > article > label > input[name=check_all]{
+    margin-right: 4px;
+}
+#sub.register .agreement > article > div {
+    width: 100%;            
+    padding-top: 20px;
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    box-sizing: border-box;
+}
+#sub.register .agreement > article > div > strong {
+    display: inline-block;
+    color: #8a8a8a;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+#sub.register .agreement > article > div > p {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eeeeee;
+    box-sizing: border-box;
+}
+#sub.register .agreement > article > div > p > label {
+    color: #8a8a8a;
+    font-size: 15px;
+}
+#sub.register .agreement > article > div > p > label > input {
+    margin-right: 4px;
+}
+#sub.register .agreement > article > div > p > label > em {
+    color: #0092fa;
+    font-style: normal;   
+}
+#sub.register .agreement > article > div > p > a {
+    float: right;
+    font-size: 14px;
+    color: #8a8a8a;
+    text-decoration: underline;
+}
+
+#sub.register .agreement > article > p {
+    font-size: 15px;
+    color: #0092fa;
+    margin-top: 16px;
+}
+
+#sub.register .member {
+    padding-top: 0;
+}
+#sub.register .member > article {
+    width: 100%;
+    min-height: 400px;
+    background: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+}
+#sub.register .member > article > h3 {
+    color: #000;
+    font-size: 15px;
+    font-weight: normal;            
+    border-bottom: 1px solid #000000;
+    padding-bottom: 6px;
+    box-sizing: border-box;
+}
+
+#sub.register .member > article > table {
+    display: block;
+    border-spacing: 0;
+}
+#sub.register .member > article > table tbody {
+    display: block;
+}
+#sub.register .member > article > table tr {
+    display: block;            
+    padding: 20px 0;
+    border-bottom: 1px solid #d0d0d0;
+}
+#sub.register .member > article > table tr > td {
+    
+}
+#sub.register .member > article > table tr > td:nth-child(1) {
+    width: 140px;            
+    font-size: 15px;
+    font-weight: 500;
+    color: #8a8a8a;
+}
+#sub.register .member > article > table tr > td:nth-child(2) {}
+#sub.register .member > article > table input {
+    height: 34px;
+    background: #f0f0f0;
+}
+
+#sub.register .member > article > table .tel {
+    width: 100px;
+    height: 34px;
+    background: #f0f0f0;
+}
+
+#sub.register .member > article > table .hp {
+    width: 100px;
+    height: 34px;
+    background: #f0f0f0;
+}
+
+
+#sub.register .member > article > table button {
+    padding: 0 10px;
+    width: 80px;
+    height: 34px;
+    font-size: 13px;
+    line-height: 34px;
+    color: #ffffff;
+    background-color: #333333;
+    box-sizing: border-box;
+}
+
+#sub.register .member > article > table input[type=radio] {
+    height: auto;            
+    margin-right: 6px;
+}
+#sub.register .member > article > table label {
+    display: inline-block;
+    padding: 10px 0;            
+    font-size: 15px;
+    color: #111;
+    margin-right: 20px;
+}
+
+
+#sub.register .member > article > table input.zip {
+    width: 120px;
+    margin-left: 4px;
+}
+
+#sub.register .member > article > table input.addr {
+    display: block;
+    width: 500px;
+    margin-top: 10px;
+}
+
+#sub.register .member > article > p {
+    font-size: 15px;            
+    color: #8a8a8a;
+    margin-top: 10px;
+}
+
+#sub.register .member > article.marketing  {}
+#sub.register .member > article.marketing > table {}
+#sub.register .member > article.marketing > table tr {}
+#sub.register .member > article.marketing > table input {
+    height: auto;
+    margin-right: 6px;
+    vertical-align: bottom;
+}
+
+#sub.register .member > article.marketing > p {
+    line-height: 26px;
+    color: #0092fa;
+}
+
+#sub.register .member > div {
+    text-align: center;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+}
+#sub.register .member > div > a {
+    display: inline-block;
+    width: 140px;
+    height: 40px;
+    font-size: 15px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: #fff;
+}
+#sub.register .member > div > a.cancel {
+    background-color: #333333;
+}
+#sub.register .member > div > a.register {
+    background-color: #0092fa;
+}
