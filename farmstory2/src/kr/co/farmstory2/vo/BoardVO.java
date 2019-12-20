@@ -5,8 +5,9 @@ public class BoardVO {
 	private int seq;
 	private int parent;
 	private int comment;
-	private String cafe;
+	private String cate;
 	private String title;
+	private String content;
 	private int file;
 	private int hit;
 	private String uid;
@@ -16,6 +17,8 @@ public class BoardVO {
 	private String nick;
 	private String oldName;
 	private int download;
+	
+	
 	public int getSeq() {
 		return seq;
 	}
@@ -34,11 +37,18 @@ public class BoardVO {
 	public void setComment(int comment) {
 		this.comment = comment;
 	}
-	public String getCafe() {
-		return cafe;
+	public String getCate() {
+		return cate;
 	}
-	public void setCafe(String cafe) {
-		this.cafe = cafe;
+	public void setCate(String cate) {
+		this.cate = cate;
+	}
+
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
 	}
 	public String getTitle() {
 		return title;

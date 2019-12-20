@@ -9,7 +9,9 @@
 <div id="board">
 	<h3>글쓰기</h3>
 	<div class="write">
-		<form action="#" method="post">
+		<form action="${path}/board/write.do" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="group" value="${boardGroup}" />
+			<input type="hidden" name="cate" value="${category}" />
 			<table>
 				<tr>
 					<td>제목</td>

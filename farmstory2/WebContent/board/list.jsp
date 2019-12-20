@@ -18,21 +18,27 @@
 				<td>날짜</td>
 				<td>조회</td>
 			</tr>
-
+			
+			<c:forEach var="vo" items="${articleList}">
 			<tr>
-				<td>1</td>
-				<td><a href="${path }/board/view.do?group=${boardGroup}&cate=${category}">테스트 제목입니다.</a>&nbsp;[3]</td>
-				<td>홍길동</td>
-				<td>18-03-01</td>
-				<td>12</td>
+				<td>${listCount=listCount-1}</td>
+				<td><a href="${path }/board/view.do?group=${boardGroup}&cate=${category}">${vo.title}</a>&nbsp;[${vo.comment}]</td>
+				<td>${vo.nick}</td>
+				<td>${vo.rdate.substring(2,10)}</td>
+				<td>${vo.hit}</td>
 			</tr>
+			</c:forEach>
 		</table>
 	</div>
 	<!-- 페이징 -->
 	<nav class="paging">
 		<span> 
 			<a href="#" class="prev">이전</a> 
-			<a href="#" class="num">1</a>
+			
+			<c:forEach var="p" begin="${groupStart}" end="${groupEnd}">
+			<a href="${path}/board/list.do?group=${boardGroup}&cate=${category}&pg=${p}" class="num">${p}</a>
+			</c:forEach>
+			
 			<a href="#" class="next">다음</a>
 		</span>
 	</nav>

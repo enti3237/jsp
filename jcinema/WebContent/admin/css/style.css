@@ -1,0 +1,523 @@
+/* 관리자페이지 스타일 */
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+ul, ol { list-style: none; }
+a { text-decoration: none; color: #555; }
+
+body {
+    font-family: "Microsoft YaHei", Georgia, "Times New Roman", Times, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1;
+    color: #222;    
+    background: #fff url('../img/admin_bg_body.jpg') repeat-x;
+    overflow-y: scroll;
+}
+
+#wrapper-admin {
+    width: 100%;
+    min-width: 980px;
+    height: auto;            
+}
+
+#wrapper-admin .container {
+    position: relative;
+    width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: 200px;            
+}
+header .logo {
+    display: inline-block;
+    margin-top: 120px;
+}
+
+
+#wrapper-admin > div > .container {
+    background: url('../img/admin_bg_aside.jpg') repeat-y;
+    border-left: 1px solid #c0c0c0;
+}
+#wrapper-admin > div aside {
+    float: left;            
+    width: 20%;
+    height: 100%;            
+}
+
+#wrapper-admin > div aside > ul {
+    width: 270px;
+    height: 100%;
+}
+#wrapper-admin > div aside > ul > li {
+    width: 100%;
+    min-height: 65px;
+}
+#wrapper-admin > div aside > ul > li > a {
+    display: block;
+    width: 268px;
+    height: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    color: #222;
+    line-height: 65px;
+    text-indent: 24px;
+    border-top: 1px solid #c0c0c0;
+}
+#wrapper-admin > div aside > ul > li:last-child > a {border-bottom: 1px solid #c0c0c0;}
+#wrapper-admin > div aside > ul > li > a:hover {
+    color: #555;
+}
+
+#wrapper-admin > div aside .fa {
+    text-indent: 0px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+#wrapper-admin > div aside ol {
+    display: none;
+    background: #fff;
+}
+#wrapper-admin > div aside ol > li {
+    width: 100%;
+    height: 32px;
+}
+#wrapper-admin > div aside ol > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 32px;
+    text-indent: 26px;
+    color: #222;
+}
+#wrapper-admin > div aside ol > li > a:hover {
+    color: #555;
+}
+
+#wrapper-admin > div section {
+    float: right;
+    width: 80%;
+    min-height: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#wrapper-admin > div section > nav {
+    position: relative;
+    width: 100%;
+    height: 46px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #c0c0c0;
+    box-sizing: border-box;
+}
+#wrapper-admin > div section > nav > h3 {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    color: #4a4a4a;
+}
+#wrapper-admin > div section > nav > p {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    color: #5a5a5a;
+}
+
+#wrapper-admin > div section > div {
+    margin-bottom: 26px;
+    overflow: hidden;
+}
+#wrapper-admin > div section > div > div {            
+    width: 49%;
+    height: 100%;
+    box-sizing: border-box;
+}
+#wrapper-admin > div section > div > div:nth-child(1) {float: left;}
+#wrapper-admin > div section > div > div:nth-child(2) {float: right;}
+
+
+#wrapper-admin > div section h4 {
+    width: 100%;
+    height: 56px;
+    border-bottom: 1px solid #c0c0c0;
+    font-size: 16px;            
+    color: #4a4a4a;
+    line-height: 80px;            
+}
+#wrapper-admin > div section h4 > i.fa {
+    font-size: 26px;
+    margin-right: 10px;
+}
+#wrapper-admin > div section article {
+    width: 100%;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+#wrapper-admin > div section article table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+#wrapper-admin > div section article table tr:first-child {
+    background: #a8b2c5 !important;            
+}
+#wrapper-admin > div section article table tr:first-child > th {
+    color: #fff;;
+}
+#wrapper-admin > div section article table tr:nth-child(2n+1) {
+    background: #eceff5;
+}
+
+
+#wrapper-admin > div section article table tr > th {
+    border-color: #959595;
+    border-style: solid;
+    border-width: 1px;            
+    color: #484848;
+    letter-spacing: 2px;
+    padding: 12px;
+    text-align: center;
+    text-transform: uppercase;
+}
+#wrapper-admin > div section article table tr > td {
+    border: 1px solid #959595;
+    padding: 6px 6px 6px 12px;
+    color: #484848;
+}
+
+footer {            
+    width: 100%;
+    height: 60px;
+    background: #484848;
+}
+
+footer p {
+    float: left;
+    margin-top: 20px;
+    color: #efefef;
+}
+
+/* 영화관리 > 영화등록 */
+.movie-register {
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Georgia, "Times New Roman", Times, sans-serif;
+    line-height: 1.5em;
+    color: #484848;
+}
+
+.movie-register .field {
+    margin: 20px 0;
+}
+.movie-register label {
+    display: inline-block;
+    width: 100px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #484848;
+    vertical-align: top;
+}
+
+.movie-register input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #959595;
+    font-size: 13px;            
+    background-color: #eaeaea;
+    color: #333;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+.movie-register select {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #959595;
+    font-size: 13px;            
+    background-color: #eaeaea;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.movie-register textarea {
+    padding: 5px;
+    border: 1px solid #959595;
+    font-size: 13px;            
+    background-color: #eaeaea;
+    color: #333;
+    box-sizing: border-box;
+    resize: none;            
+}
+
+.movie-register span {
+    vertical-align: bottom;
+    color: #bc2e13;
+}
+
+.movie-register .btnRegister {
+    float: right;
+    height: 26px;
+    margin-right: 246px;
+    padding: 0 15px;
+    background-color: #a8b2c5;            
+    border: 1px solid #959595;
+    font-size: 12px;            
+    color: #fff;            
+    vertical-align: middle;
+}
+/* 티켓관리 > 티켓생성 */
+.ticket-generate {
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Georgia, "Times New Roman", Times, sans-serif;
+    line-height: 1.5em;
+    color: #484848;
+}
+
+.ticket-generate .field {
+    margin: 20px 0;
+}
+.ticket-generate label {
+    display: inline-block;
+    width: 100px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #484848;
+    vertical-align: top;
+}
+
+.ticket-generate input {
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #959595;
+    font-size: 13px;            
+    background-color: #eaeaea;
+    color: #333;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+.ticket-generate select {
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #959595;
+    font-size: 13px;            
+    background-color: #eaeaea;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.ticket-generate textarea {
+    padding: 5px;
+    border: 1px solid #959595;
+    font-size: 13px;            
+    background-color: #eaeaea;
+    color: #333;
+    box-sizing: border-box;
+    resize: none;            
+}
+
+.ticket-generate span {
+    vertical-align: bottom;
+    color: #bc2e13;
+}
+
+.ticket-generate .btnRGenerate {
+    float: right;
+    height: 26px;
+    margin-right: 246px;
+    padding: 0 15px;
+    background-color: #a8b2c5;            
+    border: 1px solid #959595;
+    font-size: 12px;            
+    color: #fff;            
+    vertical-align: middle;
+}
+
+/* 무비 등록하기 */
+
+.movie-schedule {
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Georgia, "Times New Roman", Times, sans-serif;
+    line-height: 1.5em;
+    color: #484848;
+}
+
+.movie-schedule .field {
+    margin: 20px 0;
+}
+.movie-schedule label {
+    display: inline-block;
+    width: 100px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #484848;
+    vertical-align: top;
+}
+
+.movie-schedule label.tit {            
+    display: inline;            
+    font-size: 12px;
+    font-weight: normal;
+    color: #484848;            
+}
+
+.movie-schedule input {
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #959595;
+    font-size: 13px;            
+    background-color: #eaeaea;
+    color: #333;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.movie-schedule input[type=checkbox] {
+    width: auto;
+    margin-right: 6px;
+}
+
+.movie-schedule select {
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #959595;
+    background-color: #eaeaea;
+    font-size: 13px;                        
+    color: #333;
+    box-sizing: border-box;
+}
+
+.movie-schedule textarea {
+    padding: 5px;
+    border: 1px solid #959595;
+    font-size: 13px;            
+    background-color: #eaeaea;
+    color: #333;
+    box-sizing: border-box;
+    resize: none;            
+}
+
+.movie-schedule span {
+    vertical-align: bottom;
+    color: #bc2e13;
+}
+
+.movie-schedule .btnMovieSearch {            
+    border: 1px solid #959595;
+    font-size: 12px;
+    background: #a8b2c5;
+    padding: 9px 15px;
+    color: #fff;
+    vertical-align: top;
+}
+
+.movie-schedule .btnRegister {
+    float: right;
+    height: 26px;
+    margin-right: 246px;
+    padding: 0 15px;
+    background-color: #a8b2c5;            
+    border: 1px solid #959595;
+    font-size: 12px;            
+    color: #fff;            
+    vertical-align: middle;
+}
+
+#searchBg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+#searchBg > .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -250px;
+    width: 500px;
+    height: 500px;            
+    background: #fff url('../img/admin_bg_popup.png') repeat-x;
+}
+
+#searchBg > .container > h2 {
+    margin: 10px;            
+    color: #FFFFFF;
+    font-size: 15px;            
+    font-weight: normal;
+}
+#searchBg > .container > .btnClose {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 16px;
+    width: 16px;
+    background: transparent url('../img/admin_btn_close.png') no-repeat scroll 0 0;
+    cursor: pointer;
+    font-size: 0;
+}
+
+#searchBg > .container > div {     
+    padding: 10px;
+    box-sizing: border-box;       
+}
+
+#searchBg > .container table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+#searchBg > .container table tr:nth-child(2n+1) {
+    background: #eceff5;
+}
+
+
+#searchBg > .container table tr > th {
+    border-color: #959595;
+    border-style: solid;
+    border-width: 1px;            
+    color: #484848;
+    letter-spacing: 2px;
+    padding: 12px;
+    text-align: center;
+    text-transform: uppercase;
+}
+#searchBg > .container table tr > td {
+    border: 1px solid #959595;
+    padding: 6px 6px 6px 12px;
+    color: #484848;
+}
+
+
+#searchBg > .container .btnSearch {
+    border: 1px solid #959595;
+    font-size: 12px;
+    background: #a8b2c5;
+    padding: 9px 15px;
+    color: #fff;
+    vertical-align: top;
+}
+
+#searchBg > .container .btnChoice {
+    border: 1px solid #959595;
+    font-size: 12px;
+    background: #a8b2c5;
+    padding: 9px 15px;
+    color: #fff;
+    vertical-align: top;
+}

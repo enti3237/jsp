@@ -22,9 +22,8 @@
 		<div id="top-banner">
 			<canvas id="canvas"></canvas>
 			<div>
-				<a href="#" class="image"><img id="topBannerImg"
-					src="${path}/img/top_banner_poster2.jpg" alt=""></a> <a href="#"
-					class="close"><img src="${path}/img/banner-close.png" alt=""></a>
+				<a href="#" class="image"><img id="topBannerImg" src="${path}/img/top_banner_poster2.jpg" alt=""></a> 
+				<a href="#"	class="close"><img src="${path}/img/banner-close.png" alt=""></a>
 			</div>
 		</div>
 
@@ -32,23 +31,35 @@
 			<div class="service">
 				<article>
 					<p>
-						<a href="#">모바일 APP</a> <a href="#">좋아요</a> <a href="#">구독하기</a>
+						<a href="#">모바일 APP</a> 
+						<a href="#">좋아요</a> 
+						<a href="#">구독하기</a>
 					</p>
 					<p>
-						<a href="#">로그인</a> <a href="#">회원가입</a> <a href="#">멤버십</a> <a
-							href="#">고객센터</a>
+					<c:choose>
+						<c:when test="${member eq null}">
+							<a href="${path}/member/login">로그인</a> 
+							<a href="${path}/member/register">회원가입</a> 
+						</c:when>
+						<c:otherwise>
+							<a href="${path}/member/my-cinema">마이시네마</a>
+							<a href="${path}/member/logout">로그아웃</a>
+						</c:otherwise>
+					</c:choose>
+						<a href="#">멤버십</a>
+						<a href="#">고객센터</a>
 					</p>
 				</article>
 			</div>
 			<div class="logo">
 				<article>
-					<a href="#"><img src="${path}/img/logo.gif" alt=""></a>
+					<a href="${path}"><img src="${path}/img/logo.gif" alt=""></a>
 				</article>
 			</div>
 			<div class="gnb">
 				<article>
 					<ul>
-						<li><a href="${path}/ticketing/choice-movie.html">예매</a></li>
+						<li><a href="${path}/ticketing/choice-movie">예매</a></li>
 						<li><a href="#">영화</a></li>
 						<li><a href="#">영화관</a></li>
 						<li><a href="#">이벤트</a></li>
