@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import com.mysql.jdbc.Statement;
 import com.sun.swing.internal.plaf.metal.resources.metal;
 
 import kr.co.jcinema.admin.vo.MovieScheduleVO;
@@ -24,6 +27,61 @@ public class AdminApiDAO {
 	}
 	
 	private AdminApiDAO () {}
+	
+	public Map<String, List<TheaterVO>> selectTheaters() throws Exception {
+		
+		Connection conn = DBConfig.getConnection();
+		PreparedStatement psmt = conn.prepareStatement(SQL_ADMIN.SELECT_THEATERS);
+		
+		ResultSet rs = psmt.executeQuery();
+		
+		// 인덱스 String 은 도시 이름, List 는 극장명배열
+		Map<String, List<TheaterVO>> map = new HashMap<>();
+		List<TheaterVO> list = null;
+		
+		boolean isStart = true;
+		int totalListCount = 0;
+		
+		while(rs.next()) {
+			
+			// 신규 리스트객체를 한번 만들고 그 후의 while 문 반복에서는 만들지 않는다.
+			if(isStart) {
+				list = new ArrayList<>();
+				isStart = false;
+			}
+			
+			TheaterVO tv = new TheaterVO();
+
+			String city = rs.getString(4);
+			// 새 쿼리문에서 추가한 JC_THEATER 테이블의 8번째 칼럼-theater_city칼럼의 카운트값
+			int count = rs.getInt(8);
+			
+			tv.setTheater_no(rs.getInt(1));
+			tv.setTheater_local_code(rs.getInt(2));
+			tv.setTheater_name(rs.getString(3));
+			tv.setTheater_city(city);
+			tv.setTheater_addr(rs.getString(5));
+			tv.setTheater_tel(rs.getString(6));
+			tv.setTheater_screen_count(rs.getInt(7));
+			
+			list.add(tv);
+			totalListCount++;
+			
+			// while문이 한바퀴 돌 때마다 추가되는 totalListCount 값이 theater_city의 count 값과 일치하면 배열을 map에 적용
+			// 그 후 isStart를 다시 true로 만들어 신규 리스트객체를 만들 준비를 한다.
+			if(totalListCount == count) {
+				map.put(city, list);
+				totalListCount = 0;
+				isStart = true;
+			}
+		}
+		
+		rs.close();
+		psmt.close();
+		conn.close();
+		
+		return map;
+	}
 	
 	public List<TheaterVO> selectTheater(String city) throws Exception {
 		
@@ -101,15 +159,16 @@ public class AdminApiDAO {
 			mv.setMovie_grade(rs.getInt(3));
 			mv.setMovie_company(rs.getString(4));
 			mv.setMovie_score(rs.getDouble(5));
-			mv.setMovie_release_date(rs.getString(6));
-			mv.setMovie_genre(rs.getString(7));
-			mv.setMovie_country(rs.getString(8));
-			mv.setMovie_running_time(rs.getInt(9));
-			mv.setMovie_homepage(rs.getString(10));
-			mv.setMovie_poster(rs.getString(11));
-			mv.setMovie_desc(rs.getString(12));
-			mv.setMovie_director(rs.getString(13));
-			mv.setMovie_actor(rs.getString(14));
+			mv.setMovie_ticket_rate(rs.getDouble(6));
+			mv.setMovie_release_date(rs.getString(7));
+			mv.setMovie_genre(rs.getString(8));
+			mv.setMovie_country(rs.getString(9));
+			mv.setMovie_running_time(rs.getInt(10));
+			mv.setMovie_homepage(rs.getString(11));
+			mv.setMovie_poster(rs.getString(12));
+			mv.setMovie_desc(rs.getString(13));
+			mv.setMovie_director(rs.getString(14));
+			mv.setMovie_actor(rs.getString(15));
 			
 			movies.add(mv);
 		}

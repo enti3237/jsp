@@ -379,6 +379,45 @@
     box-sizing: border-box;
 }
 
+
+#sub.choice-movie > .showtime section > .round_view {
+	margin-top: 20px;	
+	overflow: hidden;
+}
+
+#sub.choice-movie > .showtime section > .round_view > li {
+	float: left;
+	width: 115px;
+	height: 80px;
+	margin-right: 4px;
+	border: 1px solid #e5e5e5;	
+}
+
+#sub.choice-movie > .showtime section > .round_view > li:hover  span {	
+	background-color: #231f20;
+	color: #fff;
+}
+
+#sub.choice-movie > .showtime section > .round_view > li > a {}
+#sub.choice-movie > .showtime section > .round_view > li > a > span {
+	display: block;
+	font-size: 12px;
+	color: #666;
+	text-align: center;
+	padding: 7px 0;
+}
+#sub.choice-movie > .showtime section > .round_view > li > a > span:nth-child(2) {
+	font-size: 15px;
+	font-weight: bold;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+}
+#sub.choice-movie > .showtime section > .round_view > li > a > span > em {}
+
+
+
+
+
 #sub.choice-movie > .showtime .banner {
     height: 230px;
 }

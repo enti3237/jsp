@@ -1,8 +1,4 @@
-/*
-    날짜 : 2019/11/26
-    이름 : 김철학
-    내용 : 예매하기 날짜 출력
-*/
+/* 예매하기 날짜 출력 */
 $(document).ready(function(){
 
     var $a       = $('.calendar a');
@@ -50,7 +46,15 @@ $(document).ready(function(){
         // 날짜
         if(today > lastDate.getDate()){
             today = 1;
+            month = month+1;
+
+            if(month > 11){
+            	month = 0;
+            	year = year+1;
+            }
         }
+        
+        $(this).attr('data-date', year+"-"+(month+1)+"-"+today);
 
         $(this).children().last().text(today++);
 
@@ -66,6 +70,10 @@ $(document).ready(function(){
         
         $a.parent().removeClass('on');
         $(this).parent().addClass('on');
+
+        // 날짜입력필드에 선택한 날짜 입력
+        var today = $(this).children().eq(1).text();
+        $('input[name=movie_date]').val(year+'-'+(month+1)+"-"+today);
 
     });
 

@@ -1,16 +1,3 @@
- function textLengthOverCut(txt, len, lastTxt) {
-        if (len == "" || len == null) { // 기본값
-            len = 5;
-        }
-        if (lastTxt == "" || lastTxt == null) { // 기본값
-            lastTxt = "...";
-        }
-        if (txt.length > len) {
-            txt = txt.substr(0, len) + lastTxt;
-        }
-        return txt;
-    }
-
 
 $(function() {
 	
@@ -29,7 +16,7 @@ $(function() {
 		searchBg.hide();
 	});
 	
-	// 팝업에서 검색하기
+	// btnSearch Action Start - movie name search
 	var btnSearch  = $('#searchBg .btnSearch');
 	var searchTable = $('#searchBg .searchTable');
 		
@@ -46,8 +33,8 @@ $(function() {
 				
 				searchTable.append( '<tr>'+
                         			'<th>'+data[i].movie_no+'</th>'+
-                        			'<td>'+data[i].movie_title+'</td>'+
-                        			'<td>'+data[i].movie_genre+'</td>'+
+                        			'<td>'+data[i].movie_title.substring(0,10)+"..."+'</td>'+
+                        			'<td>'+data[i].movie_genre.substring(0,5)+"..."+'</td>'+
                         			'<td>'+data[i].movie_grade+'</td>'+
                         			'<td>'+data[i].movie_release_date.substring(2, 10)+'</td>'+
                         			'<td><button class="btnChoice" data-movie-no="'+data[i].movie_no+'" title="'+data[i].movie_title+'">선택</button></td>'+

@@ -9,7 +9,7 @@
     </nav>
                         
     <article>
-        <form action="#">
+        <form action="/jcinema/admin/ticket/generate" method="POST">
         <input type="text" name="theater_no"/>
         <input type="text" name="screen_no"/>
             <div class="field">
