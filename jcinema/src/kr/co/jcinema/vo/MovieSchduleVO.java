@@ -1,25 +1,32 @@
-package kr.co.jcinema.admin.vo;
+package kr.co.jcinema.vo;
 
-public class MovieScheduleVO {
+public class MovieSchduleVO {
 	
 	private String schedule_theater_no;
 	private String schedule_screen_no;
 	private String schedule_movie_no;
-	private String schedule_date;		// 2020-01-04
-	private String schedule_start_time; // 12:00
-	private String schedule_end_time;   // 16:00
+	private String schedule_date;
+	private String schedule_start_time;
+	private String schedule_end_time;
 	private String schedule_round_view;
 	
-	private String movie_title;
+
+	private String theater_name;
+	private String screen_name;
 	
-	public String getMovie_title() {
-		return movie_title;
+	
+	public String getTheater_name() {
+		return theater_name;
 	}
-	
-	public void setMovie_title(String movie_title) {
-		this.movie_title = movie_title;
+	public void setTheater_name(String theater_name) {
+		this.theater_name = theater_name;
 	}
-	
+	public String getScreen_name() {
+		return screen_name;
+	}
+	public void setScreen_name(String screen_name) {
+		this.screen_name = screen_name;
+	}
 	public String getSchedule_theater_no() {
 		return schedule_theater_no;
 	}
@@ -62,7 +69,7 @@ public class MovieScheduleVO {
 	public void setSchedule_round_view(String schedule_round_view) {
 		this.schedule_round_view = schedule_round_view;
 	}
-	
-	
 
+	
+	
 }

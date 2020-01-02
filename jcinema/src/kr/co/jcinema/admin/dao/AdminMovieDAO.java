@@ -11,7 +11,6 @@ import kr.co.jcinema.admin.vo.ScreenVO;
 import kr.co.jcinema.admin.vo.TheaterVO;
 import kr.co.jcinema.config.DBConfig;
 import kr.co.jcinema.config.SQL_ADMIN;
-import kr.co.jcinema.vo.MovieVo;
 
 public class AdminMovieDAO {
 	

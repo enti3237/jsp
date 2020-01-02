@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 
 import kr.co.jcinema.controller.CommonService;
 import kr.co.jcinema.dao.MovieDAO;
-import kr.co.jcinema.vo.MovieVo;
+import kr.co.jcinema.vo.MovieVO;
 
 public class MoviesService implements CommonService {
 
@@ -20,7 +20,7 @@ public class MoviesService implements CommonService {
 		String schedule_date = req.getParameter("schedule_date");
 
 		MovieDAO dao = MovieDAO.getInstance();
-		List<MovieVo> movies = dao.selectMovies(theater_no, schedule_date);
+		List<MovieVO> movies = dao.selectMovies(theater_no, schedule_date);
 		
 		String json = new Gson().toJson(movies);
 		

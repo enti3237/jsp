@@ -16,7 +16,7 @@ import kr.co.jcinema.admin.vo.ScreenVO;
 import kr.co.jcinema.admin.vo.TheaterVO;
 import kr.co.jcinema.config.DBConfig;
 import kr.co.jcinema.config.SQL_ADMIN;
-import kr.co.jcinema.vo.MovieVo;
+import kr.co.jcinema.vo.MovieVO;
 
 public class AdminApiDAO {
 	
@@ -140,7 +140,7 @@ public class AdminApiDAO {
 		
 	}
 
-	public List<MovieVo> selectMovies(String title) throws Exception {
+	public List<MovieVO> selectMovies(String title) throws Exception {
 		
 		Connection conn = DBConfig.getConnection();
 		PreparedStatement psmt = conn.prepareStatement(SQL_ADMIN.SELECT_MOVIES);
@@ -148,15 +148,15 @@ public class AdminApiDAO {
 		
 		ResultSet rs = psmt.executeQuery();
 		
-		List<MovieVo> movies = new ArrayList<>();
+		List<MovieVO> movies = new ArrayList<>();
 		
 		while(rs.next()) {
 			
-			MovieVo mv = new MovieVo();
+			MovieVO mv = new MovieVO();
 			
 			mv.setMovie_no(rs.getInt(1));
 			mv.setMovie_title(rs.getString(2));
-			mv.setMovie_grade(rs.getInt(3));
+			mv.setMovie_grade(rs.getString(3));
 			mv.setMovie_company(rs.getString(4));
 			mv.setMovie_score(rs.getDouble(5));
 			mv.setMovie_ticket_rate(rs.getDouble(6));

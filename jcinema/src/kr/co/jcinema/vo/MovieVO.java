@@ -1,10 +1,10 @@
 package kr.co.jcinema.vo;
 
-public class MovieVo {
+public class MovieVO {
 	
 	private int movie_no;
 	private String movie_title;
-	private int movie_grade;
+	private String movie_grade;
 	private String movie_company;
 	private double movie_score;
 	private double movie_ticket_rate;
@@ -39,10 +39,10 @@ public class MovieVo {
 	public void setMovie_title(String movie_title) {
 		this.movie_title = movie_title;
 	}
-	public int getMovie_grade() {
+	public String getMovie_grade() {
 		return movie_grade;
 	}
-	public void setMovie_grade(int movie_grade) {
+	public void setMovie_grade(String movie_grade) {
 		this.movie_grade = movie_grade;
 	}
 	public String getMovie_company() {

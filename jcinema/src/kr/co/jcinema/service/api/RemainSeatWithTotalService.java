@@ -21,14 +21,16 @@ public class RemainSeatWithTotalService implements CommonService {
 		String ticketScreenNo  = req.getParameter("ticket_screen_no");
 		
 		MovieDAO dao = MovieDAO.getInstance();
-		List<List<Integer>> seats = dao.selectRemainSeatWithTotal(  ticketMovieDate,
-																	ticketTheaterNo,
-																	ticketMovieNo, 
-																	ticketScreenNo);
+		
+		List<List<Integer>> seats = dao.selectRemainSeatWithTotal(ticketMovieDate,
+																  ticketTheaterNo,
+																  ticketMovieNo,
+																  ticketScreenNo );
 		
 		String json = new Gson().toJson(seats);
 		
 		return json;
+		
 	}
 
 }

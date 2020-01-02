@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 
 import kr.co.jcinema.controller.CommonService;
 import kr.co.jcinema.dao.MovieDAO;
-import kr.co.jcinema.vo.MovieVo;
+import kr.co.jcinema.vo.MovieVO;
 
 public class PostersService implements CommonService {
 
@@ -17,7 +17,7 @@ public class PostersService implements CommonService {
 	public String requestProc(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		
 		MovieDAO dao = MovieDAO.getInstance();
-		List<MovieVo> posters = dao.selectPosters();
+		List<MovieVO> posters = dao.selectPosters();
 		
 		String json = new Gson().toJson(posters);
 		return json;
