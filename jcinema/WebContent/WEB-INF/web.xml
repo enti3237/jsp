@@ -65,12 +65,6 @@
 			<url-pattern>/_index.jsp</url-pattern>
 		</web-resource-collection>
 	</security-constraint>
-		<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>free pages</web-resource-name>
-			<url-pattern>/admin/_index.jsp</url-pattern>
-		</web-resource-collection>
-	</security-constraint>
 
 	<security-role>
 		<description>Nobody should be in this role so JSP files are protected from direct access.</description>

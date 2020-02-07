@@ -1,93 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="./_header.jsp"%>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-<style>
-	/* bxSlider 커스텀 */
-	.bx-wrapper {
-		max-width: none !important;
-		box-shadow: none;
-    	border: none;
-	}
-	
-	.bx-wrapper img {
-		width: 188px;
-	}
-</style>
-<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-<script>
-
-	// topBanner
-	$(function() {
-		
-	});
-	
-	// Advance ranking
-	$(function () {
-		
-	});
-	
-	// Slider Banner
-/*  	$(document).ready(function(){
- 		
- 		var sliderUl = $('.slider > div > ul');
- 		
- 		sliderUl.bxSlider({
- 	        slideWidth: 'auto',
- 	        auto:'true',
- 	        pause: 2000,
- 	        controls: false,
- 	        pager: false
- 		});
-
- 	}); 
-	 */
-	// Poster Banner
-	$(function () {
-		
-		var posterUl = $('.poster > article > ul');
-		
-		$.ajax({
-			
-			url: '/jcinema/movie/posters' ,
-			type : 'get',
-			dataType: 'json',
-			success : function(data){
-				
-				for (var i=0 ; i<data.length ; i++) {
-					posterUl.append("<li><a href='/jcinama/movie/detail?movie_no="+data[i].movie_no+"'><img src='/jcinema/resource/poster/"+data[i].movie_poster+"' alt='"+data[i].movie_title+"'/></a></li>");
-				}
-				
-				posterUl.bxSlider({
-			        slideWidth: 'auto',
-			        maxSlides: 5,
-			        minSlides: 5,
-			        moveSlides: 1,
-			        auto:'true',
-			        pause: 3000,
-			        controls: false,
-			        pager: false
-			    });
-
-			}
-		});
-
-	});
-	
-</script>
-
-
-
 
 <main>
 	<div class="slider">
 		<div>
 			<ul>
-				<li><img src="${path}/resource/slider/Baekdu_1115645.jpg" alt=""></li>
-<%-- 				<li><img src="${path}/resource/slider/Cats_1115645.jpg" alt=""></li>
-				<li><img src="${path}/resource/slider/ForbiddenDream_1115645.jpg" alt=""></li>
-				<li><img src="${path}/resource/slider/HauntedHouse_1115645.jpg" alt=""></li>
-				<li><img src="${path}/resource/slider/SnowQueen_1115645.jpg" alt=""></li>
-				<li><img src="${path}/resource/slider/StartUp_1115645_1.jpg" alt=""></li> --%>
+				<li><img src="${path}/img/slider_banner_poster1.jpg" alt=""></li>
 			</ul>
 			<div class="box-office">
 				<div class="top">
@@ -126,7 +44,18 @@
 	</div>
 	<div class="poster">
 		<article>
-			<ul> </ul>
+			<ul>
+				<li><a href="#"><img
+						src="${path}/img/poster_banner_img1.jpg" alt=""></a></li>
+				<li><a href="#"><img
+						src="${path}/img/poster_banner_img2.jpg" alt=""></a></li>
+				<li><a href="#"><img
+						src="${path}/img/poster_banner_img3.jpg" alt=""></a></li>
+				<li><a href="#"><img
+						src="${path}/img/poster_banner_img4.jpg" alt=""></a></li>
+				<li><a href="#"><img
+						src="${path}/img/poster_banner_img5.jpg" alt=""></a></li>
+			</ul>
 		</article>
 	</div>
 	<div class="sponsor">

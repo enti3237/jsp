@@ -24,7 +24,6 @@ public class RegisterService implements CommonService {
 			mv.setUser_email(req.getParameter("email"));
 			mv.setUser_tel(req.getParameter("tel"));
 			mv.setUser_hp(req.getParameter("hp"));
-			mv.setUser_grade(2);
 			mv.setUser_addr_type(req.getParameter("addrT"));
 			mv.setUser_zip(req.getParameter("zip"));
 			mv.setUser_addr_main(req.getParameter("addr1"));

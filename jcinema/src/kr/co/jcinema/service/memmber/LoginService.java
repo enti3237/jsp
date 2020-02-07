@@ -36,8 +36,8 @@ public class LoginService implements CommonService {
 			}
 
 		} else {
-			
-			// 회원이 아닐 경우 - 로그인 버튼을 누르지 않은 모든 상황
+
+			// 로그인 버튼을 누르지 않은 모든 상황
 			return "/member/login.jsp";
 
 		}

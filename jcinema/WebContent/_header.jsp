@@ -8,9 +8,9 @@
 <title>제이시네마</title>
 <link rel="shortcut icon" href="${path}/img/favicon.ico" />
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="${path}/css/style.css" />
-<link rel="stylesheet" href="${path}/css/sub.css">
-<link rel="stylesheet" href="${path}/css/style_member.css">
+<link rel="stylesheet" href="${path}/css/style.css?v=2" />
+<link rel="stylesheet" href="${path}/css/sub.css?v=2">
+<link rel="stylesheet" href="${path}/css/style_member.css?v=2">
 
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>

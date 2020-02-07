@@ -14,7 +14,7 @@ public class LogoutService implements CommonService {
 		HttpSession session = req.getSession();
 		session.invalidate();
 		
-		return "redirect:/jcinema/";
+		return "redirect:/jcinema/member/login";
 	}
 
 }

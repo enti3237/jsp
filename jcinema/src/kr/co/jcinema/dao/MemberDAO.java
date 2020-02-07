@@ -13,28 +13,7 @@ public class MemberDAO {
 	private static MemberDAO instance = new MemberDAO();
 	public static MemberDAO getInstance() {return instance;}
 	private MemberDAO() {}
-	
-	public int selectCheckUid(String uid) throws Exception {
 
-		Connection conn = DBConfig.getConnection();
-		
-		PreparedStatement psmt = conn.prepareStatement(SQL.SELECT_CHECK_UID);
-		psmt.setString(1, uid);
-		
-		ResultSet rs = psmt.executeQuery();
-		
-		int result = 0;
-		
-		if(rs.next()) {
-			result = rs.getInt(1);
-		}
-		
-		rs.close();
-		psmt.close();
-		conn.close();
-		
-		return result;
-	}
 	
 	public void insertMember(MemberVO mv) throws Exception {
 				
@@ -47,12 +26,11 @@ public class MemberDAO {
 		psmt.setString(4, mv.getUser_email());
 		psmt.setString(5, mv.getUser_tel());
 		psmt.setString(6, mv.getUser_hp());
-		psmt.setInt(7, mv.getUser_grade());
-		psmt.setString(8, mv.getUser_addr_type());
-		psmt.setString(9, mv.getUser_zip());
-		psmt.setString(10, mv.getUser_addr_main());
-		psmt.setString(11, mv.getUser_addr_detail());
-		psmt.setString(12, mv.getUser_regip());
+		psmt.setString(7, mv.getUser_addr_type());
+		psmt.setString(8, mv.getUser_zip());
+		psmt.setString(9, mv.getUser_addr_main());
+		psmt.setString(10, mv.getUser_addr_detail());
+		psmt.setString(11, mv.getUser_regip());
 		
 		psmt.executeUpdate();
 		
@@ -104,29 +82,7 @@ public class MemberDAO {
 	}
 	
 	
-	public void updateMember(MemberVO mv) throws Exception {
-		
-		Connection conn = DBConfig.getConnection();
-		
-		PreparedStatement psmt = conn.prepareStatement(SQL.UPATE_MEMBER);
-		psmt.setString(1, mv.getUser_pass());
-		psmt.setString(2, mv.getUser_name());
-		psmt.setString(3, mv.getUser_tel());
-		psmt.setString(4, mv.getUser_addr_type());
-		psmt.setString(5, mv.getUser_zip());
-		psmt.setString(6, mv.getUser_addr_main());
-		psmt.setString(7, mv.getUser_addr_detail());
-		psmt.setString(8, mv.getUser_agree_point());
-		psmt.setString(9, mv.getUser_agree_site());
-		psmt.setString(10, mv.getUser_id());
-		
-		psmt.executeUpdate();
-		
-		psmt.close();
-		conn.close();
-		
-	}
-	
+	public void updateMember() throws Exception {}
 	public void deleteMember() throws Exception {}
 	
 	
